@@ -18,7 +18,7 @@ class CreateBarang extends Migration
             $table->integer('kode_brg');
             $table->string('nama_brg');
             $table->string('merk_brg');
-            $table->string('bidang_brg');
+            $table->string('kondisi_brg');
             $table->string('lokasi');
             $table->date('thn_perolehan');
             $table->string('klmpk_alat');
@@ -28,6 +28,8 @@ class CreateBarang extends Migration
             $table->string('sumber_dana');
             $table->string('ket_brg');
             $table->string('kode_lokasi');
+            $table->string('kode_bidang');
+            $table->string('tanggal');
             $table->timestamps();
         });
     }
