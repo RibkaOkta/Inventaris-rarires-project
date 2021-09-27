@@ -36,7 +36,7 @@
           <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link " href="/users" id="navbarDropdown" role="button" >
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

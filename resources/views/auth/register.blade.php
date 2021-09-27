@@ -65,13 +65,16 @@
                             <div class="form-group row{{$errors->has('level') ? 'has-error' :null}}">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Level') }}</label>
                             <div class="col-md-6">
+                           
                             <select name="level" id="" class="form-control">
+
                                    <option value="" hidden selected>--Pilih Level--</option>
                                    <option value="super_admin">Super Admin</option>
                                    <option value="admin">Admin</option>
                                    <option value="users">Users</option>
+                          
                                </select>
-
+                            
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

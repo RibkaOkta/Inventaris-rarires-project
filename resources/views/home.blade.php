@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <button type="button" class="btn btn-primary"><a href="/" style="text-decoration:none;">Login</a></button>
                 </div>
             </div>
         </div>
