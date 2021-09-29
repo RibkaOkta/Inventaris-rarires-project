@@ -22,6 +22,8 @@ class CreateBarang extends Migration
             $table->string('lokasi');
             $table->date('thn_perolehan');
             $table->string('klmpk_alat');
+            $table->string('kode_bidang');
+            $table->string('tanggal');
             $table->integer('urutan_brg');
             $table->integer('jumlah_brg');
             $table->string('kondisi_brg');

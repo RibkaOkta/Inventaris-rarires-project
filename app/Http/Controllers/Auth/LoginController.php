@@ -40,7 +40,7 @@ class LoginController extends Controller
                 break;
 
             default:
-                $this->redirectTo = 'login';
+                $this->redirectTo = 'dashboard';
                 return $this->redirectTo;
             break;
         }

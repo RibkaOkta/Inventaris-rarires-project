@@ -85,7 +85,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class="list-group">
               
-              <img src="../pictures/bn-logo.jpg" alt="" id="logo">
+              <img src="{{asset('pictures/bn-logo.jpg')}}" alt="" id="logo">
               <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                      SMK BAGIMU NEGERIKU
           </a>
@@ -122,6 +122,11 @@
               <li class="nav-item dropdown">
               <a href="/user" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users
+          </a>
+          </li>
+              <li class="nav-item">
+              <a href="/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-newspaper me-3"></i>Pinjam Barang
           </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="#">Super Admin</a>

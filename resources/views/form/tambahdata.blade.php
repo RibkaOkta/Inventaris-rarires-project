@@ -5,13 +5,16 @@
 <div class="container">
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
+  <div class="card-footer text-muted">
+ <p> <button type="submit" class="btn btn-primary">Tambah data</button>
   <h1><i class="fas fa-plus me-3"></i>Tambah Data Barang</h1>
   </div>
+  <p>
   <div class="card-body">
   <form action='/tambahdata/tambah' method='POST'>
   @csrf
   <div class="mb-3">
-    <label for="kodebarang" class="form-label">Kode Bidang Barang</label>
+    <label for="k odebarang" class="form-label">Kode Bidang Barang</label>
       <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
         <option value='1'>Barang Umum</option>
         <option value='2'>Barang Alat Umum</option>
