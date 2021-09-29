@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -23,7 +21,14 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <body>
-        
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+  <div class="container-fluid mb-3">
+    
+    <a class="navbar-brand"><div class="sidebar-heading text-center  primary-text fs-2 fw-bold text-uppercase ">
+                    <i class="fas fa-user-secret me-2" ></i>Inventaris 
+                    </a>
+</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,7 +53,10 @@
         </li>
        
       </ul>
-
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
@@ -75,7 +83,7 @@
               
               <img src="../pictures/bn-logo.jpg" alt="" id="logo">
               <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                     SMK BAGIMU NEGERIKU
+                   SMK BAGIMU NEGERIKU
           </a>
             
               <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
@@ -83,7 +91,7 @@
           </a>
               
               <li class="nav-item">
-              <a href="/dssuper" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="/dashboards" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-tachometer-alt me-3"></i>Dashboard
           </a>
           </li>
@@ -109,7 +117,7 @@
           </li>
               <li class="nav-item dropdown">
               <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
-                  <i class="fas fa-users me-3"></i>Users
+                 <i class="fas fa-users me-3"></i>Users
           </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="#">Super Admin</a>
@@ -129,12 +137,8 @@
                 </div>
             </div>
          </div>
-         <div id="content-dashboard">
-          
-            <h2>Selamat Datang </h2>
-            <h2>Selamat Datang </h2>
+         <div class="content-dashboard">
+
          </div>
     </body>
 </html>
-
-@endsection

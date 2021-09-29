@@ -50,5 +50,8 @@ Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang'
 //multiuser
 Auth::routes();
 Route::get('/superadmin', 'SuperadminController@index')->name('superadmin')->middleware('superadmin');
+Route::get('/dssuper', 'SuperadminController@dashboard')->name('superadmin')->middleware('superadmin');
 Route::get('/user', 'UserController@index')->name('user')->middleware('user');
-Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin','AdminController@index')->name('admin')->middleware('admin');Route::get('/home', 'HomeController@index')->name('home');
+
+

@@ -72,18 +72,5 @@ class RegisterController extends Controller
             'level' => $data['level'],
         ]);
     }
-    // public function role($role){
-    //     $level= DB::table('users')->get('level');
-    //     $role= DB::table('users')->get('role');
-    //     if ($level == "super_admin"){
-    //         $ir=DB::table('role')->insert(['role'=>1]);
-    //         return redirect()->route('register');
-    //     }if ($level == "admin"){
-    //         $ir= DB::table('role')->insert(['role'=>2]);
-    //         return redirect()->route('register');
-    //     }else{
-    //         $ir= DB::table('role')->insert(['role'=>3]);
-    //         return redirect()->route('register');
-    //     }
-    // }
+   
 }
