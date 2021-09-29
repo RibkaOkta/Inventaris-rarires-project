@@ -18,14 +18,14 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', function () {
     return view('dash');
-})->name("dashboard");
+});
 Route::get('/users', function () {
     return view('users');
 });
 Route::get('/databarang', "DatabarangnController@index")->name("databarang");
+Route::get('/databarang/cari',"DatabarangnController@cari");
+Route::get('/dataruangan/cari',"RuangController@cari");
 Route::get('/dataruangan', "RuangController@ruang")->name("dataruangan");
-
-
 
 
 Route::get('/aturan', function () {
@@ -35,11 +35,11 @@ Route::get('/aturan', function () {
 Route::get('/tambahdata', function () {
     return view('/form/tambahdata');
 });
-Route::get('/dashboards', function () {
-    return view('/dashboard');
-});
 Route::get('/pinjambarang', function () {
     return view('/pinjambarang');
+});
+Route::get('/dashboards', function () {
+    return view('/dashboard');
 });
 
  Route::get('/tambahdata', 'DataBarangnController@tambah');
@@ -52,7 +52,7 @@ Route::get('/pinjambarang', function () {
 Route::get('/dataruangan/{kode_lokasi}/edit','RuangController@edit');
 Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang');
 
-// multiuser
+//multiuser
 Auth::routes();
 Route::get('/superadmin', 'SuperadminController@index')->name('superadmin')->middleware('superadmin');
 Route::get('/user', 'UserController@index')->name('user')->middleware('user');

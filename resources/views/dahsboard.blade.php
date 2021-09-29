@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Inventaris BN</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -16,10 +16,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- js -->
         <script src="js/app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('#exampleModal').modal('show');
+            });
+        </script>
     <body>
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
@@ -38,7 +42,7 @@
           <a class="nav-link active" aria-current="page" href="/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+          <a class="nav-link" href="#">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,10 +57,7 @@
         </li>
        
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    
     </div>
   </div>
 </nav>
@@ -91,7 +92,7 @@
           </a>
               
               <li class="nav-item">
-              <a href="/dashboards" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-tachometer-alt me-3"></i>Dashboard
           </a>
           </li>
@@ -116,13 +117,8 @@
           </a>
           </li>
               <li class="nav-item dropdown">
-              <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
+              <a href="/user" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users
-          </a>
-          </li>
-              <li class="nav-item">
-              <a href="/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                  <i class="fas fa-archway me-3"></i>Peminjaman Barang
           </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="#">Super Admin</a>
@@ -141,9 +137,6 @@
                 </div>
                 </div>
             </div>
-         </div>
-         <div class="content-dashboard">
-
          </div>
     </body>
 </html>

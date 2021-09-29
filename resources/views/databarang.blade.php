@@ -64,6 +64,10 @@
 	</style>
 </head>
 <body>
+<form class="d-flex" action="/databarang/cari" method="GET">
+         <input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Search" value="{{ old('cari') }}">
+        <button class="btn btn-outline-success" type="submit" value="CARI">Search</button>
+      </form>
 <center><p><h1><i class="fas fa-archway me-3"></i>DATA BARANG</h1></p>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>

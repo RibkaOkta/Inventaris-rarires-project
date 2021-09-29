@@ -15,6 +15,17 @@ class DatabarangnController extends Controller
         return view('databarang', compact('kelompokalat','lokasi','barang'));
     }
 
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$barang = DB::table('barang')
+		->where('nama_brg','like',"%".$cari."%")
+		->paginate();
+
+		return view('databarang',['barang' => $barang]);
+ 
+	}
+
     public function tambah(){
         $kelompokalat = DB::table('klmpk_alat')->get();
         $lokasi = DB::table('lokasi')->get();
@@ -34,7 +45,6 @@ class DatabarangnController extends Controller
         $kb = $req->input('kondisi');
         $sd = $req->input('sumberdana');
         $ket = $req->input('ketbarang');
-        $bb = $req->input('bidang_brg');
         $tglnew = date('y', strtotime($tgl));
 
         //mencari urutan barang
@@ -43,9 +53,9 @@ class DatabarangnController extends Controller
        
         $nomor = str_pad((string)$data, 3, "0", STR_PAD_LEFT); 
 
-        $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor.".".$bb;
+        $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
-        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl,$bb => 'bidang_brg']);
+        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
         return redirect()->route('databarang');
     }
     public function edit($no)
@@ -57,6 +67,8 @@ class DatabarangnController extends Controller
         list($kdb, $kl, $ktp,  $kkl, $knb, $kub) = explode('.', $no);
       
         $data = DB::table('barang')->join('bidang_brg', 'bidang_brg.kode_bidang_brg', '=', "barang.kode_bidang")->join('klmpk_alat', 'klmpk_alat.kode_klmpk_alat', '=', 'barang.klmpk_alat')->where('no', $no)->get();
+       
+
         return view ('databarang',compact('kelompokalat','lokasi','barang','data'));
         ;
     }
@@ -90,4 +102,6 @@ class DatabarangnController extends Controller
         $delete = DB::table('barang')->where('no', $no)->delete();
         return redirect()->route('databarang');
     }
+    
+
 }

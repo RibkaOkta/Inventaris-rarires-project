@@ -19,6 +19,17 @@ class RuangController extends Controller
         $datalok = DB::table('lokasi')->where('kode_lokasi', $kode_lokasi)->get();
         return view('dataruangan', compact('lokasiruang','datalok'));
     }
+
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$lokasiruang = DB::table('lokasi')
+		->where('ket_ruang','like',"%".$cari."%")
+		->paginate();
+
+		return view('dataruangan',['lokasiruang' => $lokasiruang]);
+ 
+	}
     public function updateruang(Request $req){
         $kodelama = $req->input('idb');
         $kl = $req->input('kodelokasi');
@@ -30,10 +41,5 @@ class RuangController extends Controller
         $update = DB::table('lokasi')->where('kode_lokasi', $kodelama)->update(['kode_lokasi' => $kl, 'gedung' => $gd, 'lantai' => $lt, 'ruangan' => $rng, 'ket_ruang' => $kr]);
 
          return redirect()->route('dataruangan');
-    }
-    public function hapus($no)
-    {
-        $delete = DB::table('lokasi')->where('no', $no)->delete();
-        return redirect()->route('dataruangan');
     }
 }
