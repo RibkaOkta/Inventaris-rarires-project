@@ -68,11 +68,10 @@
         <div class="kotak">
             <h2>12</h2>
         </div>
-<<<<<<< HEAD
+        <div class="kotak">
+            <h2>13</h2>
         </div>
     
-=======
->>>>>>> 7108b3eabe8e071b9d479a0f6d0fab18e9c864a2
 
 </div> 
     <center>
@@ -129,11 +128,7 @@
     </tr>
 
     <tr>
-<<<<<<< HEAD
     <td>Kotak 11,12 & 13</td>
-=======
-    <td>Kotak 11 & 12</td>
->>>>>>> 7108b3eabe8e071b9d479a0f6d0fab18e9c864a2
     <td>kode urutan barang	
     </td>
     <td></td>

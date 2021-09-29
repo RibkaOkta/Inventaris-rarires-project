@@ -58,7 +58,11 @@
 
   <div class="mb-3">
     <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required>
+   <select name="kodisibarang" >
+     <option value= 1> Baik</option>
+     <option value= 2>Rusak</option>
+     <option value= 3>Rusakberat</option>
+   </select>
   </div>
   <div class="mb-3">
     <label for="sumberdana" class="form-label">Sumber Dana</label>
