@@ -15,12 +15,7 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.0",
-<<<<<<< HEAD
         "santigarcor/laratrust": "^6.3"
-=======
-        "santigarcor/laratrust": "^6.3",
-        "spatie/laravel-permission": "^5.1"
->>>>>>> 7108b3eabe8e071b9d479a0f6d0fab18e9c864a2
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -38,6 +38,9 @@ Route::get('/tambahdata', function () {
 Route::get('/dashboards', function () {
     return view('/dashboard');
 });
+Route::get('/login', function () {
+    return view('/login');
+});
 
  Route::get('/tambahdata', 'DataBarangnController@tambah');
  Route::post('/tambahdata/tambah', 'DataBarangnController@store');
