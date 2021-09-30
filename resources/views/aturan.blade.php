@@ -68,6 +68,8 @@
         <div class="kotak">
             <h2>12</h2>
         </div>
+        <div class="kotak">
+            <h2>13</h2>
         </div>
     
 

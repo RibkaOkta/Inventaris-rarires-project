@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -18,9 +16,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
@@ -40,6 +36,7 @@ class LoginController extends Controller
                 break;
 
             default:
+                $this->redirectTo = 'login';
                 $this->redirectTo = 'dashboard';
                 return $this->redirectTo;
             break;
@@ -53,7 +50,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-
     }
  
 }

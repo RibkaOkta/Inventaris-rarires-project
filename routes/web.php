@@ -23,6 +23,8 @@ Route::get('/users', function () {
     return view('users');
 });
 Route::get('/databarang', "DatabarangnController@index")->name("databarang");
+Route::get('/databarang/cari',"DatabarangnController@cari");
+Route::get('/dataruangan/cari',"RuangController@cari");
 Route::get('/dataruangan', "RuangController@ruang")->name("dataruangan");
 
 

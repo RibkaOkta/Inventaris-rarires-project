@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Sep 27, 2021 at 04:20 AM
+=======
+-- Generation Time: Sep 14, 2021 at 03:13 AM
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -28,6 +32,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `barang` (
+<<<<<<< HEAD
   `no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kode_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -48,6 +53,26 @@ CREATE TABLE `barang` (
 INSERT INTO `barang` (`no`, `kode_brg`, `nama_brg`, `merk_brg`, `kondisi_brg`, `sumber_dana`, `ket_brg`, `klmpk_alat`, `kode_bidang`, `kode_lokasi`, `tanggal`) VALUES
 ('1.F106.21.1.001.003', '001', 'Mejauh', 'Ikea', 'Baik', 'Pak rei', 'bagas', '1', '1', 'F106', '2021-09-09');
 
+=======
+  `no` int(10) UNSIGNED NOT NULL,
+  `kode_brg` int(11) NOT NULL,
+  `nama_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `merk_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bidang_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thn_perolehan` date NOT NULL,
+  `klmpk_alat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `urutan_brg` int(11) NOT NULL,
+  `jumlah_brg` int(11) NOT NULL,
+  `kondisi_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sumber_dana` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ket_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 -- --------------------------------------------------------
 
 --
@@ -59,6 +84,7 @@ CREATE TABLE `bidang_brg` (
   `bidang_brg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `bidang_brg`
 --
@@ -73,6 +99,8 @@ INSERT INTO `bidang_brg` (`kode_bidang_brg`, `bidang_brg`) VALUES
 (7, 'Barang Ruang Perpustakaan'),
 (8, 'Barang Ruang Satpam');
 
+=======
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 -- --------------------------------------------------------
 
 --
@@ -99,6 +127,7 @@ CREATE TABLE `klmpk_alat` (
   `klmpk_alat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `klmpk_alat`
 --
@@ -112,6 +141,8 @@ INSERT INTO `klmpk_alat` (`kode_klmpk_alat`, `klmpk_alat`) VALUES
 (6, 'Alat Musik'),
 (7, 'Kendaraan');
 
+=======
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 -- --------------------------------------------------------
 
 --
@@ -119,15 +150,24 @@ INSERT INTO `klmpk_alat` (`kode_klmpk_alat`, `klmpk_alat`) VALUES
 --
 
 CREATE TABLE `lokasi` (
+<<<<<<< HEAD
   `kode_lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+=======
+  `kode_lokasi` int(10) UNSIGNED NOT NULL,
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
   `gedung` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lantai` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ruangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ket_ruang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+<<<<<<< HEAD
+=======
+  `lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `lokasi`
 --
@@ -208,6 +248,8 @@ INSERT INTO `lokasi` (`kode_lokasi`, `gedung`, `lantai`, `ruangan`, `ket_ruang`,
 ('K103', '', '', '', 'Ruang Bahan TKRO', NULL, NULL),
 ('K201', '', '', '', 'Ruang Pembelajaran TKRO', NULL, NULL);
 
+=======
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 -- --------------------------------------------------------
 
 --
@@ -318,10 +360,23 @@ ALTER TABLE `users`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `bidang_brg`
 --
 ALTER TABLE `bidang_brg`
   MODIFY `kode_bidang_brg` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+-- AUTO_INCREMENT for table `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `no` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bidang_brg`
+--
+ALTER TABLE `bidang_brg`
+  MODIFY `kode_bidang_brg` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -333,7 +388,17 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `klmpk_alat`
 --
 ALTER TABLE `klmpk_alat`
+<<<<<<< HEAD
   MODIFY `kode_klmpk_alat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+=======
+  MODIFY `kode_klmpk_alat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lokasi`
+--
+ALTER TABLE `lokasi`
+  MODIFY `kode_lokasi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> b2dc3486acac9202c9cecada89f0dbee958e4691
 
 --
 -- AUTO_INCREMENT for table `migrations`

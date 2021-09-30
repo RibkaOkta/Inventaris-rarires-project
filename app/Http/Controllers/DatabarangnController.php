@@ -15,6 +15,17 @@ class DatabarangnController extends Controller
         return view('databarang', compact('kelompokalat','lokasi','barang'));
     }
 
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$barang = DB::table('barang')
+		->where('nama_brg','like',"%".$cari."%")
+		->paginate();
+
+		return view('databarang',['barang' => $barang]);
+ 
+	}
+
     public function tambah(){
         $kelompokalat = DB::table('klmpk_alat')->get();
         $lokasi = DB::table('lokasi')->get();
@@ -56,6 +67,8 @@ class DatabarangnController extends Controller
         list($kdb, $kl, $ktp,  $kkl, $knb, $kub) = explode('.', $no);
       
         $data = DB::table('barang')->join('bidang_brg', 'bidang_brg.kode_bidang_brg', '=', "barang.kode_bidang")->join('klmpk_alat', 'klmpk_alat.kode_klmpk_alat', '=', 'barang.klmpk_alat')->where('no', $no)->get();
+       
+
         return view ('databarang',compact('kelompokalat','lokasi','barang','data'));
         ;
     }
@@ -89,4 +102,6 @@ class DatabarangnController extends Controller
         $delete = DB::table('barang')->where('no', $no)->delete();
         return redirect()->route('databarang');
     }
+    
+
 }

@@ -241,7 +241,7 @@ ul li:hover a{
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
-      margin-top:0;
+      margin-top:1rem;
     transition: margin-left .5s; /* If you want a transition effect */
 
   }
@@ -272,5 +272,10 @@ ul li:hover a{
     position: absolute;
     transform: translate(-50%,-50%);
  }
-
+ .d-flex{
+     position: absolute;
+     width: 25%;
+     right:0;
+     padding-bottom: 1.5rem;
+ }
  

@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
                     You are logged in!
                     <button type="button" class="btn btn-primary"><a class="text-decoration-none" href="/login" >Login</a></button>
                 </div>
