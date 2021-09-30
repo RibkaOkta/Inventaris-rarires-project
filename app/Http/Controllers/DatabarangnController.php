@@ -34,7 +34,6 @@ class DatabarangnController extends Controller
         $kb = $req->input('kondisi');
         $sd = $req->input('sumberdana');
         $ket = $req->input('ketbarang');
-        $bb = $req->input('bidang_brg');
         $tglnew = date('y', strtotime($tgl));
 
         //mencari urutan barang
@@ -43,9 +42,9 @@ class DatabarangnController extends Controller
        
         $nomor = str_pad((string)$data, 3, "0", STR_PAD_LEFT); 
 
-        $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor.".".$bb;
+        $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
-        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl,$bb => 'bidang_brg']);
+        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
         return redirect()->route('databarang');
     }
     public function edit($no)

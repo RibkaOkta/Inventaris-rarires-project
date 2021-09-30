@@ -105,8 +105,7 @@
          </div>
          <div id="content-dashboard">
           
-            <h2>Selamat Datang </h2>
-            <h2>Selamat Datang </h2>
+            yield('superadmin')
          </div>
     </body>
 </html>

@@ -1,8 +1,8 @@
 @extends('dashboard')
 
-@section('content')
+@section('superadmin')
 <div class="card">
-@foreach($barang ad $b)
+
   <div class="card-header">
    Barang Baru Masuk
   </div>
@@ -11,7 +11,7 @@
     <a href=""><p class="card-text">lihat detail<i class="fas 
     fa-angle-double-right ml-2"></i></p></a>
   </div>
-  @endforeach
+ 
 </div>
 <br>
   <div class="card">
