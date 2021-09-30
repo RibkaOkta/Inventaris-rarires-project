@@ -14,10 +14,12 @@ class CreatePinjam extends Migration
     public function up()
     {
         Schema::create('pinjam', function (Blueprint $table) {
-            $table->String('Nama_peminjam');
-            $table->String('Nama_brg');
-            $table->String('Merk_brg');
-            $table->integer('kode_lokasi');
+            $table->increments('id');
+            $table->string('namapeminjam');
+            $table->String('namabarang');
+            $table->String('merkbarang');
+            $table->integer('kodelokasi');
+            $table->integer('jumlah');
             $table->date('tanggal_pinjam');
             $table->timestamps();
         });

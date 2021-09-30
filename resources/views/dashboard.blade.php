@@ -123,6 +123,12 @@
               <i class="fas fa-newspaper me-3"></i>Pinjam Barang
           </a>
           </li>
+          </li>
+              <li class="nav-item">
+              <a href="/laporanpeminjaman" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-newspaper me-3"></i>Laporan Peminjaman
+          </a>
+          </li>
               <li class="nav-item dropdown">
               <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users

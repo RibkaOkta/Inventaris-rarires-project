@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Superadmin;
+use App\Http\Controllers\PinjamController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,9 @@ Route::get('/dataruangan', "RuangController@ruang")->name("dataruangan");
 Route::get('/aturan', function () {
     return view('aturan');
 });
-
+Route::get('/pinjambarang', function () {
+    return view('/pinjambarang');
+});
 Route::get('/tambahdata', function () {
     return view('/form/tambahdata');
 });
@@ -42,6 +45,8 @@ Route::get('/login', function () {
     return view('/login');
 });
 
+Route::get('/laporanpeminjaman','PinjamController@index');
+Route::post('/pinjambarang', 'PinjamController@tambah')->name('pinjambarang');
  Route::get('/tambahdata', 'DataBarangnController@tambah');
  Route::post('/tambahdata/tambah', 'DataBarangnController@store');
  Route::get('/databarang/{no}/edit','DataBarangnController@edit');
