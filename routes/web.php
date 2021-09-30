@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
+Route::get('/dash', function () {
     return view('dash');
 });
 Route::get('/users', function () {
@@ -40,6 +40,9 @@ Route::get('/pinjambarang', function () {
 });
 Route::get('/dashboards', function () {
     return view('/dashboard');
+});
+Route::get('/login', function () {
+    return view('/login');
 });
 
  Route::get('/tambahdata', 'DataBarangnController@tambah');

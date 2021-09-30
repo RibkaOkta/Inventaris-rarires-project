@@ -94,7 +94,7 @@
           </a>
 
               <li class="nav-item">
-              <a href="/dashboards" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="/dash" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-tachometer-alt me-3"></i>Dashboard
           </a>
           </li>

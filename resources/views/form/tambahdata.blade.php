@@ -5,6 +5,7 @@
 <div class="container">
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
+  <div class="card-footer text-muted">
   <h1><i class="fas fa-plus me-3"></i>Tambah Data Barang</h1>
   </div>
   <div class="card-body">
@@ -58,11 +59,7 @@
 
   <div class="mb-3">
     <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-   <select name="kodisibarang" >
-     <option value= 1> Baik</option>
-     <option value= 2>Rusak</option>
-     <option value= 3>Rusakberat</option>
-   </select>
+    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required>
   </div>
   <div class="mb-3">
     <label for="sumberdana" class="form-label">Sumber Dana</label>
@@ -84,3 +81,5 @@
 </div>
 </div>
 @endsection
+
+
