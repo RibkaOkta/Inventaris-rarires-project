@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStok extends Migration
+class CreatePinjam extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateStok extends Migration
      */
     public function up()
     {
-        Schema::create('stok', function (Blueprint $table) {
-            $table->id('id');
-            $table->integer('kode_brg');
-            $table->integer('stok_brg');
+        Schema::create('pinjam', function (Blueprint $table) {
+            $table->String('Nama_peminjam');
+            $table->String('Nama_brg');
+            $table->String('Merk_brg');
+            $table->integer('kode_lokasi');
+            $table->date('tanggal_pinjam');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateStok extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stok');
+        Schema::dropIfExists('pinjam');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKelompokAlat extends Migration
+class CreateJenisKlmpkAlat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateKelompokAlat extends Migration
      */
     public function up()
     {
-        Schema::create('klmpk_alat', function (Blueprint $table) {
-            $table->increments('kode_klmpk_alat');
-            $table->string('klmpk_alat');
-          });
+        Schema::create('jenis_klmpk_alat', function (Blueprint $table) {
+            $table->increments('kode_barang');
+            $table->string('kode_klmpk_alat');
+            $table->string('jenis_klmpk_alat');
+         
+        });
     }
 
     /**
@@ -26,6 +28,6 @@ class CreateKelompokAlat extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('klmpk_alat');
+        Schema::dropIfExists('jenis_klmpk_alat');
     }
 }

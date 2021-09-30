@@ -19,7 +19,6 @@ class CreateLokasi extends Migration
             $table->string('lantai');
             $table->string('ruangan');
             $table->string('ket_ruang');
-            $table->string('lokasi');
             $table->timestamps();
         });
     }

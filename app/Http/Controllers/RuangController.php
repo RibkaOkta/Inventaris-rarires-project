@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
+
 class RuangController extends Controller
 {
     public function ruang(){
@@ -29,5 +31,9 @@ class RuangController extends Controller
 
          return redirect()->route('dataruangan');
     }
-
+    public function hapus($no)
+    {
+        $delete = DB::table('lokasi')->where('no', $no)->delete();
+        return redirect()->route('dataruangan');
+    }
 }

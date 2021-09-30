@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Superadmin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
+Route::get('/dash', function () {
     return view('dash');
 });
 Route::get('/users', function () {
@@ -50,8 +50,10 @@ Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang'
 //multiuser
 Auth::routes();
 Route::get('/superadmin', 'SuperadminController@index')->name('superadmin')->middleware('superadmin');
-Route::get('/dssuper', 'SuperadminController@dashboard')->name('superadmin')->middleware('superadmin');
+Route::get('/dssuper',[SuperadminController::class,['tampildata']]);
 Route::get('/user', 'UserController@index')->name('user')->middleware('user');
 Route::get('/admin','AdminController@index')->name('admin')->middleware('admin');Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 

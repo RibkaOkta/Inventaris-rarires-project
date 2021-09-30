@@ -38,7 +38,7 @@
           <a class="nav-link active" aria-current="page" href="/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link " href="/users" id="navbarDropdown" role="button" >
@@ -118,6 +118,11 @@
               <li class="nav-item dropdown">
               <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users
+          </a>
+          </li>
+              <li class="nav-item">
+              <a href="/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                  <i class="fas fa-archway me-3"></i>Peminjaman Barang
           </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="#">Super Admin</a>
