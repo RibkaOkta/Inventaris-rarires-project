@@ -138,8 +138,7 @@
                   <i class="fas fa-users me-3"></i>Laporan
           </a>
                <div class="dropdown-menu">
-               <a class="dropdown-item fs-6" href="brgrusak">Barang Rusak</a>
-               <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak Berat</a>
+               <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
             
                
               </div>
