@@ -103,7 +103,6 @@ class DatabarangnController extends Controller
         return redirect()->route('databarang');
     }
     public function brgrusak(){
-        $no=0;
         $brgrusak = DB::table('barang')
         ->where('kondisi_brg','=','rusak')
         ->get();
@@ -114,7 +113,6 @@ class DatabarangnController extends Controller
         return view('brgrusak',compact('no','brgrusak','lokasi','delete'));
     }
     public function brgrusakberat(){
-        $no=0;
         $brgrusakberat = DB::table('barang')
         ->where('kondisi_brg','like','rusak%')
         ->get();

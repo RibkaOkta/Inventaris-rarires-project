@@ -43,16 +43,17 @@ Route::get('/laporan', function () {
     return view('/laporan');
 });
 //rusak
-Route::get('/brgrusak', function () {
-    return view('/brgrusak');
-});
-Route::get('/brgrusak', 'DataBarangnController@brgrusak');
+
 Route::get('/brgrusakberat', function () {
     return view('/brgrusakberat');
 });
 Route::delete('/brgrusakberat/deletebrg/{id}','DataBarangnController@deletebrg')->name('deletebrg');
 Route::get('/brgrusakberat', 'DataBarangnController@brgrusakberat');
+//pinjam
+Route::get('/pinjambarang', 'PinjamController@tambah')->name('pinjambarang');
+Route::post('/pinjambarang','PinjamController@store');
 
+//aa
 Route::get('/dashboards', function () {
     return view('/dashboard');
 });
@@ -60,8 +61,7 @@ Route::get('/login', function () {
     return view('/login');
 });
 
-Route::get('/laporanpeminjaman','PinjamController@index');
-Route::post('/pinjambarang', 'PinjamController@tambah')->name('pinjambarang');
+Route::get('/laporanpeminjaman','PinjamController@index');\
  Route::get('/tambahdata', 'DataBarangnController@tambah');
  Route::post('/tambahdata/tambah', 'DataBarangnController@store');
  Route::get('/databarang/{no}/edit','DataBarangnController@edit');

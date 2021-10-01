@@ -126,8 +126,14 @@
               <i class="fas fa-newspaper me-3"></i>Pinjam Barang
           </a>
           </li>
-              <li class="nav-item dropdown">
-              <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
+          </li>
+              <li class="nav-item">
+              <a href="/laporanpeminjaman" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-newspaper me-3"></i>Laporan Peminjaman
+          </a>
+          </li>
+              <li class="nav-item ">
+              <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown"  aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users
           </a>
                <div class="dropdown-menu">
@@ -139,10 +145,9 @@
            </li>
              <li class="nav-item dropdown">
               <a href="/laporan" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-newspaper me-3"></i>Laporan
+                  <i class="fas fa-users me-3"></i>Laporan
           </a>
                <div class="dropdown-menu">
-               <a href="/laporanpeminjaman" class="dropdown-item fs-6">Laporan Peminjaman</a>
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
             
                
