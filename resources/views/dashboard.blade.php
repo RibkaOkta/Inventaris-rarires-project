@@ -14,11 +14,14 @@
         <link href="{{ asset('asset/style.css') }}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
         <!-- js -->
         <script src="js/app.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
         <script>
             $(document).ready(function(){
                 $('#exampleModal').modal('show');
@@ -128,6 +131,17 @@
                <a class="dropdown-item fs-6" href="#">Admin</a>
                <div class="dropdown-devider"></div>
                <a class="dropdown-item fs-6" href="#">User</a>
+              </div>
+           </li>
+             <li class="nav-item dropdown">
+              <a href="/laporan" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-users me-3"></i>Laporan
+          </a>
+               <div class="dropdown-menu">
+               <a class="dropdown-item fs-6" href="brgrusak">Barang Rusak</a>
+               <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak Berat</a>
+            
+               
               </div>
              </li>
           </ul>

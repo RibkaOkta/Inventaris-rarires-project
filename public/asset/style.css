@@ -58,7 +58,7 @@
 }
 .dropdown:hover>.dropdown-menu{
    
-    display:flex;
+    display:absolute;
     
 }
 .dropdown-menu a{

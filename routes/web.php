@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,20 @@ Route::get('/aturan', function () {
 Route::get('/tambahdata', function () {
     return view('/form/tambahdata');
 });
+Route::get('/laporan', function () {
+    return view('/laporan');
+});
+//rusak
+Route::get('/brgrusak', function () {
+    return view('/brgrusak');
+});
+Route::get('/brgrusak', 'DataBarangnController@brgrusak');
+Route::get('/brgrusakberat', function () {
+    return view('/brgrusakberat');
+});
+Route::delete('/brgrusakberat/deletebrg/{id}','DataBarangnController@deletebrg')->name('deletebrg');
+Route::get('/brgrusakberat', 'DataBarangnController@brgrusakberat');
+
 Route::get('/dashboards', function () {
     return view('/dashboard');
 });

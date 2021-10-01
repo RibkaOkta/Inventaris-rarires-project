@@ -64,7 +64,7 @@
 	</style>
 </head>
 <body>
-<center><p><h1><i class="fas fa-archway me-3"></i>DATA RUANGAN</h1></p>
+<center><p><h1><i class="fas fa-archway me-3"></i>DATA RUANG</h1></p>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>
   <table class="table caption-top">

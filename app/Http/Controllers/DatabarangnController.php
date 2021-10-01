@@ -89,6 +89,30 @@ class DatabarangnController extends Controller
         $delete = DB::table('barang')->where('no', $no)->delete();
         return redirect()->route('databarang');
     }
-    
-
+    public function brgrusak(){
+        $no=0;
+        $brgrusak = DB::table('barang')
+        ->where('kondisi_brg','=','rusak')
+        ->get();
+        $lokasi = DB::table('barang')
+        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak')
+        ->get();
+        $delete = DB::table('barang')->where('kondisi_brg', $brgrusak)->delete();
+        return view('brgrusak',compact('no','brgrusak','lokasi','delete'));
+    }
+    public function brgrusakberat(){
+        $no=0;
+        $brgrusakberat = DB::table('barang')
+        ->where('kondisi_brg','like','rusak%')
+        ->get();
+        $lokasii = DB::table('barang')
+        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak berat')
+        ->get();
+       
+        return view('brgrusakberat',compact('no','brgrusakberat','lokasii'));
+    }
+    public function deletebrg($no){
+        DB::table('barang')->where('no',$no)->delete();
+        return redirect('/brgrusakberat');
+    }
 }
