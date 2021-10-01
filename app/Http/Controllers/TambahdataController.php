@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DatabarangnController extends Controller
+class TambahController extends Controller
 {
     public function index(){
         $kelompokalat = DB::table('klmpk_alat')->get();
@@ -14,17 +14,6 @@ class DatabarangnController extends Controller
 
         return view('databarang', compact('kelompokalat','lokasi','barang'));
     }
-
-    public function cari(Request $request)
-	{
-		$cari = $request->cari;
-		$barang = DB::table('barang')
-		->where('nama_brg','like',"%".$cari."%")
-		->paginate();
-
-		return view('databarang',['barang' => $barang]);
- 
-	}
 
     public function tambah(){
         $kelompokalat = DB::table('klmpk_alat')->get();
@@ -55,8 +44,8 @@ class DatabarangnController extends Controller
 
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
-        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
-        return redirect()->route('databarang');
+        $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
+        return redirect()->route('/form/tambahdata');
     }
     public function edit($no)
     {
@@ -67,9 +56,7 @@ class DatabarangnController extends Controller
         list($kdb, $kl, $ktp,  $kkl, $knb, $kub) = explode('.', $no);
       
         $data = DB::table('barang')->join('bidang_brg', 'bidang_brg.kode_bidang_brg', '=', "barang.kode_bidang")->join('klmpk_alat', 'klmpk_alat.kode_klmpk_alat', '=', 'barang.klmpk_alat')->where('no', $no)->get();
-       
-
-        return view ('databarang',compact('kelompokalat','lokasi','barang','data'));
+        return view ('/form/tambahdata',compact('kelompokalat','lokasi','barang','data'));
         ;
     }
     public function update(Request $req){
@@ -95,37 +82,11 @@ class DatabarangnController extends Controller
 
         $update = DB::table('barang')->where('no', $kodelama)->update(['no' => $kodebaru, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
  
-        return redirect()->route('databarang');
+        return redirect()->route('/form/tambahdata');
     }
     public function hapus($no)
     {
         $delete = DB::table('barang')->where('no', $no)->delete();
-        return redirect()->route('databarang');
-    }
-    public function brgrusak(){
-        $no=0;
-        $brgrusak = DB::table('barang')
-        ->where('kondisi_brg','=','rusak')
-        ->get();
-        $lokasi = DB::table('barang')
-        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak')
-        ->get();
-        $delete = DB::table('barang')->where('kondisi_brg', $brgrusak)->delete();
-        return view('brgrusak',compact('no','brgrusak','lokasi','delete'));
-    }
-    public function brgrusakberat(){
-        $no=0;
-        $brgrusakberat = DB::table('barang')
-        ->where('kondisi_brg','like','rusak%')
-        ->get();
-        $lokasii = DB::table('barang')
-        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak berat')
-        ->get();
-       
-        return view('brgrusakberat',compact('no','brgrusakberat','lokasii'));
-    }
-    public function deletebrg($no){
-        DB::table('barang')->where('no',$no)->delete();
-        return redirect('/brgrusakberat');
+        return redirect()->route('/form/tambahdata');
     }
 }

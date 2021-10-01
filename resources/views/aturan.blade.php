@@ -3,7 +3,7 @@
 @section('content')
 <html>
 <head>
-<center><h1><i class="fas fa-book me-3"></i>Aturan Inventaris<h1></center>
+<center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>
     <style type="text/css">
     *{
         margin:0;
@@ -19,8 +19,8 @@
 }
 .container .kotak{
     position: relative;
-    width: 40px;
-    height: 50px;
+    width: 30px;
+    height: 40px;
     background:	#aaa1a1;
     margin:0 20px;
 
@@ -68,6 +68,10 @@
         <div class="kotak">
             <h2>12</h2>
         </div>
+        <div class="kotak">
+            <h2>13</h2>
+        </div>
+    
 
 </div> 
     <center>
@@ -124,7 +128,7 @@
     </tr>
 
     <tr>
-    <td>Kotak 11 & 12</td>
+    <td>Kotak 11,12 & 13</td>
     <td>kode urutan barang	
     </td>
     <td></td>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
+
 class RuangController extends Controller
 {
     public function ruang(){
@@ -17,6 +19,17 @@ class RuangController extends Controller
         $datalok = DB::table('lokasi')->where('kode_lokasi', $kode_lokasi)->get();
         return view('dataruangan', compact('lokasiruang','datalok'));
     }
+
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$lokasiruang = DB::table('lokasi')
+		->where('ket_ruang','like',"%".$cari."%")
+		->paginate();
+
+		return view('dataruangan',['lokasiruang' => $lokasiruang]);
+ 
+	}
     public function updateruang(Request $req){
         $kodelama = $req->input('idb');
         $kl = $req->input('kodelokasi');
@@ -29,5 +42,4 @@ class RuangController extends Controller
 
          return redirect()->route('dataruangan');
     }
-
 }

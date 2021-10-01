@@ -7,8 +7,8 @@ use App\Models\Users;
 class UsersController extends Controller
 {
     public function index(){
-        $data = DB::table('users')->get();
-
-        return view('/superadmin');
+        $users = DB::table('users')->get();
+        dump($users);
+        return view('superadmin.index');
     }
 }

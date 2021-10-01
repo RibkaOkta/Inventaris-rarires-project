@@ -13,11 +13,10 @@ class CreateBidangBarang extends Migration
      */
     public function up()
     {
-        Schema::create('bidang_brg', function (Blueprint $table) {
+        Schema::create('bidang_barang', function (Blueprint $table) {
             $table->increments('kode_bidang_brg');
             $table->string('bidang_brg');
-        
-         
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ class CreateBidangBarang extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bidang_brg');
+        Schema::dropIfExists('bidang_barang');
     }
 }
