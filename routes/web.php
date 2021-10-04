@@ -31,6 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/dash', function () {
                 return view('superadmin/dash');
             });
+            Route::get('/dash','DataBarangnController@new')->name('new');
             Route::get('/users', function () {
                 return view('superadmin/users');
                         });

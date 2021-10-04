@@ -22,7 +22,7 @@
 <div class="container">
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
-  <h1><center> <i class="fas fa-newspaper me-3"></i>Peminjaman Barang</h1></center>
+  <h1><center> <i class="fas fa-bookmark me-3"></i>Peminjaman Barang</h1></center>
   </div>
   <div class="card-body">
 <form method="POST" action="{{ route('pinjambrg')}}">

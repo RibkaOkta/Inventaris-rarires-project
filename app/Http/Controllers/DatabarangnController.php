@@ -102,6 +102,15 @@ class DatabarangnController extends Controller
         $delete = DB::table('barang')->where('no', $no)->delete();
         return redirect()->route('databarang');
     }
+    public function new(){
+        $baru=DB::table('barang')->orderby('tanggal','desc')->limit(5)->get();
+        return view('superadmin.dash',['new'=>$baru]);
+    }
+    // public function rusak(){
+    //     $rusak=DB::table('barang')->where('kondisi_brg','like','rusak%')->orderby('tanggal','desc')->limit(5)->get();
+    //     dump($rusak);
+    //     return view('superadmin.dash',['rusak'=>$rusak]);
+    // }
     public function brgrusakberat(){
         $brgrusakberat = DB::table('barang')
         ->where('kondisi_brg','like','rusak%')
@@ -114,6 +123,6 @@ class DatabarangnController extends Controller
     }
     public function deletebrg($no){
         DB::table('barang')->where('no',$no)->delete();
-        return redirect('superadmin.brgrusakberat');
+        return redirect('/brgrusakberat');
     }
 }

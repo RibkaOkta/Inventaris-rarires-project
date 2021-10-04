@@ -259,7 +259,11 @@ ul li:hover a{
   }
  .card{
      margin-left:5em;
-     width:60%;
+     width:90%;
+ }
+ .mb-3,select{
+
+     width:80%;
  }
  #content-dashboard{
     display: flex;
@@ -354,4 +358,9 @@ ul li:hover a{
     color:#03a9f4;
     animation:animate 4s ease-in-out;
 
+}
+@keyframes animate {
+    0%,100%{
+
+    }
 }

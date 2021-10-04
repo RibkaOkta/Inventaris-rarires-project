@@ -34,9 +34,13 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
   <div class="container-fluid mb-3">
 
+<form class="d-flex" action="/dataruangan/cari" method="GET">
+<input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Cari" value="{{ old('cari') }}" >
+<button class="btn btn-dark" type="submit" value="CARI">Cari</button>
+      </form>	
     <a class="navbar-brand"><div class="sidebar-heading text-center  primary-text fs-2 fw-bold text-uppercase ">
                     <i class="fas fa-user-secret me-2" ></i>Inventaris 
-                    </a>
+                    </a>     
 </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -125,16 +129,26 @@
           </li>
               <li class="nav-item">
               <a href="/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-              <i class="fas fa-newspaper me-3"></i>Pinjam Barang
+              <i class="fas fa-bookmark me-3"></i>Pinjam Barang
           </a>
           </li>
+<<<<<<< HEAD:resources/views/superadmin/dashboard.blade.php
           </li>
               <li class="nav-item ">
               <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown"  aria-expanded="false">
+=======
+              <li class="nav-item">
+              <a href="/laporanpeminjaman" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-newspaper me-3"></i>Laporan peminjam barang
+          </a>
+          </li>
+              <li class="nav-item dropdown">
+              <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" " aria-expanded="false">
+>>>>>>> 1c4626e82f2c5c148c656e2a294a9927e0de9802:resources/views/dashboard.blade.php
                   <i class="fas fa-users me-3"></i>Users
           </a>
                <div class="dropdown-menu">
-               <a class="dropdown-item fs-6" href="#">Super Admin</a>
+               <a class="dropdown-item fs-6" href="/sa">Super Admin</a>
                <a class="dropdown-item fs-6" href="#">Admin</a>
                <div class="dropdown-devider"></div>
                <a class="dropdown-item fs-6" href="#">User</a>
