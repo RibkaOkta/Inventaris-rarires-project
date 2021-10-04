@@ -56,7 +56,7 @@ class DatabarangnController extends Controller
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
-        return redirect()->route('superadmin.databarang');
+        return redirect()->route('databarang');
     }
     public function edit($no)
     {
@@ -95,12 +95,12 @@ class DatabarangnController extends Controller
 
         $update = DB::table('barang')->where('no', $kodelama)->update(['no' => $kodebaru, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
  
-        return redirect()->route('superadmin.databarang');
+        return redirect()->route('databarang');
     }
     public function hapus($no)
     {
         $delete = DB::table('barang')->where('no', $no)->delete();
-        return redirect()->route('superadmin.databarang');
+        return redirect()->route('databarang');
     }
     public function brgrusakberat(){
         $brgrusakberat = DB::table('barang')

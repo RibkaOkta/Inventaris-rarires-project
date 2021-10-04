@@ -27,12 +27,12 @@ class PinjamController extends Controller
             'jumlah' => $request->jumlah,
             'tanggal_pinjam' => $request->tanggal_pinjam,
         ]);
-        return redirect('superadmin.pinjambarang');
+        return redirect('/pinjambarang');
     }
     public function destroy($id) {
 
         DB::table('pinjam')->where('id',$id)->delete();
-        return redirect('/laporanpeminjaman');
+        return redirect('superadmin.laporanpeminjaman');
     
     }
 }
