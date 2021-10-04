@@ -14,15 +14,18 @@ class PinjamController extends Controller
        
         return view('/laporanpinjam',['pinjam' => $pinjam]);
     }
-    public function tambah(Request $request){
-        $tambah = new pinjam;
-        $tambah->namapeminjam = $request->namapeminjam;
-        $tambah->namabarang = $request->namabarang;
-        $tambah->merkbarang = $request->merkbarang;
-        $tambah->kodelokasi = $request->kode_lokasi;
-        $tambah->tanggal_pinjam = $request->tanggal_pinjam;
-        $tambah->jumlah = $request->jumlah;
-        $tambah->save();
+    public function tambah(Request $req){
+        $np = $req->input('namapeminjam');
+        $nb = $req->input('namabarang');
+        $mb = $req->input('merkbarang');
+        $kl = $req->input('kodelokasi');
+        $tp = $req->input('tanggalpinjam');
+        $jmlh = $req->input('jumlahpinjam');
+        $tglnew = date('y', strtotime($tp));
+
+        $insert = DB::table('pinjam')->insert(['namapeminjam' => $np, 'namabarang' => $nb, 'merkbarang' => $mb, 'kodelokasi' => $kl, 'jumlah' => $jmlh,  'tanggal_pinjam' => $tp]);
+        return redirect()->route('laporpinjam');
+      
        }
       
     public function create()

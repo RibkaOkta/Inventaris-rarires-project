@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form class="d-flex" action="/databarang/cari" method="GET">
+<form class="d-flex" action="/databarang/dataruangan/cari" method="GET">
          <input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Cari data barang" value="{{ old('cari') }}">
         <button class="btn btn-dark" type="submit" value="CARI">Cari</button>
       </form>

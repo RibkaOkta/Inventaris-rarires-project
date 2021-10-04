@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Auth\Notifications;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $notification = auth()->user()->unreadNotifications;
+       // dd($notification);
+        return view('home', compact('notification'));
+
+    }
+    
+    public function markNotification(Request $req){
+        auth()->user()
+        ->unreadNotifications
+        ->when($req->input('id'), function($query) use ($req){
+            return $query->where('id', $req->input('id'));
+        })->markAsRead();
+
+        return response()->noContent();
     }
 }

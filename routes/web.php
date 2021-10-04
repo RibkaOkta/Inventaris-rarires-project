@@ -45,7 +45,8 @@ Route::get('/login', function () {
     return view('/login');
 });
 
-Route::get('/laporanpeminjaman','PinjamController@index');
+
+Route::get('/laporanpeminjaman','PinjamController@index')->name('laporpinjam');
 Route::post('/pinjambarang', 'PinjamController@tambah')->name('pinjambarang');
  Route::get('/tambahdata', 'DataBarangnController@tambah');
  Route::post('/tambahdata/tambah', 'DataBarangnController@store');
