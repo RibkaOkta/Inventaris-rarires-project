@@ -1,6 +1,6 @@
-@extends('dashboard')                   
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <script>
 </script>
   @if (session('success'))
@@ -25,7 +25,7 @@
   <h1><center> <i class="fas fa-newspaper me-3"></i>Peminjaman Barang</h1></center>
   </div>
   <div class="card-body">
-<form method="POST" action="{{ route('pinjambarang')}}">
+<form method="POST" action="{{ route('pinjambrg')}}">
   {{csrf_field()}}
  
 
@@ -56,6 +56,6 @@
   <div class="card-footer text-muted">
   <button type="submit" class="btn btn-dark">Kirim</button>
   </div>
-  
+</form>
 @endsection
 

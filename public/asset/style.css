@@ -331,3 +331,27 @@ ul li:hover a{
 .demo-table tfoot th:first-child {
     text-align: right;
 }
+.content{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    position:relative;
+}
+.content h2{
+    position: absolute;
+    color:white;
+    transform: translate(-50%,-50%);
+    font-size: 8em;
+    
+}
+.content h2:nth-child(1){
+    color:transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+
+}
+.content h2:nth-child(2){
+    color:#03a9f4;
+    animation:animate 4s ease-in-out;
+
+}

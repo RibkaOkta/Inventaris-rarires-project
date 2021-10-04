@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 
 <form class="d-flex" action="/databarang/cari" method="GET">
          <input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Cari data barang" value="{{ old('cari') }}">
@@ -9,6 +9,7 @@
 <center><p><h1><i class="fas fa-archway me-3"></i>DATA BARANG</h1></p>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>
+  <h5>TOTAL DATA: {{$barang->count()}}</h5>
   <table class="table caption-top">
     <thead>
     <tr>

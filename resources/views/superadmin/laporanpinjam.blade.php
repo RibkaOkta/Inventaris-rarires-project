@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <div class="card">
   <div class="card-header">
   <p class="fs-2">Laporan Peminjaman Barang</p>
@@ -29,8 +29,12 @@
     <td>{{ $p->kodelokasi }}</td>
     <td>{{ $p->tanggal_pinjam }}</td>
     <td>{{ $p->jumlah }}</td>
-    @method('DELETE')
-    <td><a href="#"> <button type="button" class="btn btn-warning btn-sm">Konfirmasi</button></a></td>
+    <td> <form method="POST" action="{{ route('pinjambarang.destroy', [$p->id]) }}">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
+                                <button type="submit" title="Hapus Data" class="btn btn-sm btn-warning" onclick="return confirm('Apakah Barang Ini Sudah Dikembalikan?')">Dikembalikan</button>
+                            </form>
+    </th></td>
   </tr>
   </tbody>
   @endforeach

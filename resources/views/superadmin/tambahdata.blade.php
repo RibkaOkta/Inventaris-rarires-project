@@ -1,5 +1,6 @@
-@extends('dashboard')
-@section('content')
+@extends('superadmin.index')
+
+@section('superadmin')
 <script>
 </script>
 <div class="container">

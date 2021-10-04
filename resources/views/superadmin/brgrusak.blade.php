@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <div class="card">
   <div class="card-header">
     <p class="fs-2">Data Barang Rusak</p>

@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <html>
 <head>
 <center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>

@@ -12,7 +12,7 @@ class DatabarangnController extends Controller
         $lokasi = DB::table('lokasi')->get();
         $barang = DB::table('barang')->get();
 
-        return view('databarang', compact('kelompokalat','lokasi','barang'));
+        return view('superadmin.databarang', compact('kelompokalat','lokasi','barang'));
     }
 
     public function cari(Request $request)
@@ -22,7 +22,7 @@ class DatabarangnController extends Controller
 		->where('nama_brg','like',"%".$cari."%")
 		->paginate();
 
-		return view('databarang',['barang' => $barang]);
+		return view('superadmin.databarang',['barang' => $barang]);
  
 	}
 
@@ -31,7 +31,7 @@ class DatabarangnController extends Controller
         $lokasi = DB::table('lokasi')->get();
         $barang = DB::table('barang')->get();
 
-        return view('form.tambahdata', compact('kelompokalat','lokasi','barang'));
+        return view('superadmin.tambahdata', compact('kelompokalat','lokasi','barang'));
     }
 
     public function store(Request $req){
@@ -56,7 +56,7 @@ class DatabarangnController extends Controller
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
-        return redirect()->route('databarang');
+        return redirect()->route('superadmin.databarang');
     }
     public function edit($no)
     {
@@ -69,7 +69,7 @@ class DatabarangnController extends Controller
         $data = DB::table('barang')->join('bidang_brg', 'bidang_brg.kode_bidang_brg', '=', "barang.kode_bidang")->join('klmpk_alat', 'klmpk_alat.kode_klmpk_alat', '=', 'barang.klmpk_alat')->where('no', $no)->get();
        
 
-        return view ('databarang',compact('kelompokalat','lokasi','barang','data'));
+        return view ('superadmin.databarang',compact('kelompokalat','lokasi','barang','data'));
         ;
     }
     public function update(Request $req){
@@ -95,22 +95,12 @@ class DatabarangnController extends Controller
 
         $update = DB::table('barang')->where('no', $kodelama)->update(['no' => $kodebaru, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
  
-        return redirect()->route('databarang');
+        return redirect()->route('superadmin.databarang');
     }
     public function hapus($no)
     {
         $delete = DB::table('barang')->where('no', $no)->delete();
-        return redirect()->route('databarang');
-    }
-    public function brgrusak(){
-        $brgrusak = DB::table('barang')
-        ->where('kondisi_brg','=','rusak')
-        ->get();
-        $lokasi = DB::table('barang')
-        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak')
-        ->get();
-        $delete = DB::table('barang')->where('kondisi_brg', $brgrusak)->delete();
-        return view('brgrusak',compact('no','brgrusak','lokasi','delete'));
+        return redirect()->route('superadmin.databarang');
     }
     public function brgrusakberat(){
         $brgrusakberat = DB::table('barang')
@@ -120,10 +110,10 @@ class DatabarangnController extends Controller
         ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak berat')
         ->get();
        
-        return view('brgrusakberat',compact('no','brgrusakberat','lokasii'));
+        return view('superadmin.brgrusakberat',compact('brgrusakberat','lokasii'));
     }
     public function deletebrg($no){
         DB::table('barang')->where('no',$no)->delete();
-        return redirect('/brgrusakberat');
+        return redirect('superadmin.brgrusakberat');
     }
 }

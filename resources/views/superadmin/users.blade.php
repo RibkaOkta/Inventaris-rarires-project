@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <center>><h1> <i class="fas fa-users me-3"></i>Selamat Datang Admin</h1>
 <br>
 <div class="row">

@@ -74,6 +74,7 @@
               document.getElementById("mySidebar").style.width = "250px";
               document.getElementById("main").style.marginLeft = "250px";
               document.getElementById("navbar").style.marginLeft = "250px";
+              document.getElementById("content-dashboard").style.marginLeft = "250px";
   }
   
   
@@ -81,6 +82,7 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
             document.getElementById("navbar").style.marginLeft = "0";
+            document.getElementById("content-dashboard").style.marginLeft = "0";
   }
             </script>
             <div id="mySidebar" class="sidebar">
@@ -127,11 +129,6 @@
           </a>
           </li>
           </li>
-              <li class="nav-item">
-              <a href="/laporanpeminjaman" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-              <i class="fas fa-newspaper me-3"></i>Laporan Peminjaman
-          </a>
-          </li>
               <li class="nav-item ">
               <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown"  aria-expanded="false">
                   <i class="fas fa-users me-3"></i>Users
@@ -145,12 +142,12 @@
            </li>
              <li class="nav-item dropdown">
               <a href="/laporan" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-users me-3"></i>Laporan
+              <i class="fas fa-newspaper me-3"></i>Laporan
           </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
-            
-               
+               <a href="/laporanpeminjaman" class="dropdown-item fs-6">
+              Laporan Peminjaman</a>
               </div>
              </li>
           </ul>
@@ -159,12 +156,16 @@
                 <div class="container-fluid px-4">
                 <div id="main">
                   <button class="openbtn" onclick="openNav()">&#9776;</button>
-                    @yield('content')
+                    @yield('superadmin')
                 </div>
                 </div>
             </div>
          </div>
-         <div class="content-dashboard">
+         <!-- <div id="content-dashboard">
+         <div id="content">
+           <h2>Selamat Datang <b>{{ Auth::user()->name }}</b></h2>
+           <h2 >Selamat Datang <b>{{ Auth::user()->name }}</b></h2>
          </div>
+         </div> -->
     </body>
 </html>

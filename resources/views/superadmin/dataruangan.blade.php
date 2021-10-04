@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 <form class="d-flex" action="/dataruangan/cari" method="GET">
          <input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Cari ruangan" value="{{ old('cari') }}" >
         <button class="btn btn-dark" type="submit" value="CARI">Cari</button>

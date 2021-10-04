@@ -1,10 +1,10 @@
-@extends('dashboard')
+@extends('superadmin.index')
 
-@section('content')
+@section('superadmin')
 
 <div class="card">
   <div class="card-header">
-    <p class="fs-2">Data Barang Rusak Berat</p>
+    <p class="fs-2">Data Barang Rusak </p>
   </div>
   <div class="card-body">
   <table class="table">
