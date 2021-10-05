@@ -1,14 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Users;
 class UsersController extends Controller
 {
     public function index(){
-        $users = DB::table('users')->get();
-        dump($users);
-        return view('superadmin.index');
+        $sa = DB::table('users')->get();
+        return view('superadmin.sa',['sa'=>$sa]);
+    }
+   
+
+public function edit($id)
+    {
+        $users = DB::table('users')->where('id',$id)->get();
+	    return view('superadmin.sa',['users' => $users]);
+    }
+public function update(Request $req){
+        $name = $req->input('name');
+        $email = $req->input('email');
+        $role = $req->input('role');
+        $level = $req->input('level');
+        $update = DB::table('users')->where('id', $id)->update(['name' => $name, 'email' => $email, 'role' => $role, 'level' => $level]);
+         return redirect()->route('/sa');
     }
 }
+

@@ -27,24 +27,26 @@ Route::get('/admin','AdminController@index')->name('admin')->middleware('admin')
 Route::get('/home', 'HomeController@index')->name('home');
 
 //superadmin
-
+            //dash
             Route::get('/dash', function () {
-                return view('superadmin/dash');
-            });
+                return view('superadmin/dash'); });
             Route::get('/dash','DataBarangnController@new')->name('new');
+         
+
             Route::get('/users', function () {
                 return view('superadmin/users');
                         });
             Route::get('/aturan', function () {
                 return view('superadmin/aturan');
             });
-            Route::get('/tambahdata', function () {
-                return view('superadmin/tambahdata');
+            Route::get('/users/edit/{id}','UsersController@edit');
+            //users
+            Route::get('/sa', function () {
+                return view('superadmin/sa');
             });
-            Route::get('/laporan', function () {
-                return view('superadmin/laporan');
-                        });
-
+            Route::get('/sa','UsersController@index')->name('sa');
+            Route::get('/sa/edit/{id}','UsersController@edit');
+            Route::post('/users/update', 'UsersController@update')->name('update');
             //barang and ruang
             Route::get('/databarang', "DatabarangnController@index")->name("databarang");
             Route::get('/databarang/cari',"DatabarangnController@cari");

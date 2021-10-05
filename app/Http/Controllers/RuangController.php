@@ -17,7 +17,7 @@ class RuangController extends Controller
     {
         $lokasiruang = DB::table('lokasi')->get();
         $datalok = DB::table('lokasi')->where('kode_lokasi', $kode_lokasi)->get();
-        return view('superadmin.dataruang', compact('lokasiruang','datalok'));
+        return view('superadmin.dataruangan', compact('lokasiruang','datalok'));
     }
 
     public function cari(Request $request)
@@ -27,7 +27,7 @@ class RuangController extends Controller
 		->where('ket_ruang','like',"%".$cari."%")
 		->paginate();
 
-		return view('superadmin.dataruang',['lokasiruang' => $lokasiruang]);
+		return view('superadmin.dataruangan',['lokasiruang' => $lokasiruang]);
  
 	}
     public function updateruang(Request $req){
@@ -40,6 +40,6 @@ class RuangController extends Controller
 
         $update = DB::table('lokasi')->where('kode_lokasi', $kodelama)->update(['kode_lokasi' => $kl, 'gedung' => $gd, 'lantai' => $lt, 'ruangan' => $rng, 'ket_ruang' => $kr]);
 
-         return redirect()->route('superadmin.dataruang');
+         return redirect()->route('/dataruangan');
     }
 }

@@ -104,7 +104,9 @@ class DatabarangnController extends Controller
     }
     public function new(){
         $baru=DB::table('barang')->orderby('tanggal','desc')->limit(5)->get();
-        return view('superadmin.dash',['new'=>$baru]);
+        $rusak=DB::table('barang')->where('kondisi_brg','like','rusak%')->orderby('tanggal','desc')->limit(5)->get();
+        //     dump($rusak);
+        return view('superadmin.dash',['new'=>$baru,'rusak'=>$rusak]);
     }
     // public function rusak(){
     //     $rusak=DB::table('barang')->where('kondisi_brg','like','rusak%')->orderby('tanggal','desc')->limit(5)->get();

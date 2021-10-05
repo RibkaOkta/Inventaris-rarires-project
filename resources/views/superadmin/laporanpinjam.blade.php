@@ -1,4 +1,4 @@
-@extends('superadmin.index')
+@extends('superadmin.welcome')
 
 @section('superadmin')
 <div class="card">

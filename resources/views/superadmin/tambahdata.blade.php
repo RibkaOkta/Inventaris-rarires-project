@@ -1,4 +1,4 @@
-@extends('superadmin.index')
+@extends('superadmin.welcome')
 
 @section('superadmin')
 <script>
@@ -6,7 +6,6 @@
 <div class="container">
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
-  <div class="card-footer text-muted">
   <h1><i class="fas fa-plus me-3"></i>Tambah Data Barang</h1>
   </div>
   <div class="card-body">

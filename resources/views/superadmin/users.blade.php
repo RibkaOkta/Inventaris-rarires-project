@@ -1,4 +1,4 @@
-@extends('superadmin.index')
+@extends('superadmin.welcome')
 
 @section('superadmin')
 <center>><h1> <i class="fas fa-users me-3"></i>Selamat Datang Admin</h1>

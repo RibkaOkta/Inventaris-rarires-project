@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 *{
     margin:0;
     padding:0;
@@ -57,9 +58,7 @@
     cursor:pointer;
 }
 .dropdown:hover>.dropdown-menu{
-   
-    display:absolute;
-    
+    display:block;
 }
 .dropdown-menu a{
     font-size: 18px;
@@ -265,17 +264,7 @@ ul li:hover a{
 
      width:80%;
  }
- #content-dashboard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height:70vh;
- }
- #content-dashboard h2{
-
-    position: absolute;
-    transform: translate(-50%,-50%);
- }
+ 
  .d-flex{
      position: absolute;
      width: 25%;
@@ -335,32 +324,37 @@ ul li:hover a{
 .demo-table tfoot th:first-child {
     text-align: right;
 }
-.content{
+
+#content{
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: black;
-    position:relative;
+    position:relative; 
+    min-height: 60vh;
 }
-.content h2{
-    position: absolute;
-    color:white;
-    transform: translate(-50%,-50%);
-    font-size: 8em;
-    
+#content h2{
+    margin-left: 2em;
+    margin-top:2em;
+    transform: translate(0%);
+    position:absolute;
+    font-size: 4em;
+    font-family: 'Inter', sans-serif;
+
+    /* transform: translate(-50%,-50%); */
 }
-.content h2:nth-child(1){
+#content-dashboard #content h2:nth-child(1){
     color:transparent;
-    -webkit-text-stroke: 2px #03a9f4;
+    -webkit-text-stroke: 2px black;
 
 }
-.content h2:nth-child(2){
-    color:#03a9f4;
-    animation:animate 4s ease-in-out;
-
+#content-dashboard #content h2:nth-child(2){
+    color:black;
+    animation: animate 4s ease-in-out infinite;
 }
-@keyframes animate {
+@keyframes animate{
     0%,100%{
-
+        clip-path: polygon(0 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0 100%);
+    }
+    50%{
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
     }
 }

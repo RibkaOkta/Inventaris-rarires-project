@@ -24,6 +24,6 @@ class SuperadminController extends Controller
     }
    public function tampildata(){
         $barangbaru = DB::table('barang')->orderbydesc('tanggal');
-        return redirect()->route('superadmin.dashboard');
+        return redirect()->route('superadmin.index');
    }
 }

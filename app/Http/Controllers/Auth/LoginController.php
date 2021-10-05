@@ -37,7 +37,7 @@ class LoginController extends Controller
 
             default:
                 $this->redirectTo = 'login';
-                $this->redirectTo = 'dashboard';
+                $this->redirectTo = '/user';
                 return $this->redirectTo;
             break;
         }
