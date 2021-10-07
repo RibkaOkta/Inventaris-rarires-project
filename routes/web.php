@@ -44,9 +44,9 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/sa', function () {
                 return view('superadmin/sa');
             });
-            Route::get('/sa','UsersController@index')->name('sa');
-            Route::get('/sa/edit/{id}','UsersController@edit');
-            Route::post('/users/update', 'UsersController@update')->name('update');
+            Route::get('/sa','UsersController@index');
+            Route::get('/sa/edit/{id}','UsersController@edit')->name('wuedit');
+            Route::post('/users/update', 'UsersController@update')->name('editusers');
             //barang and ruang
             Route::get('/databarang', "DatabarangnController@index")->name("databarang");
             Route::get('/databarang/cari',"DatabarangnController@cari");

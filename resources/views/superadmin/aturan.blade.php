@@ -3,8 +3,10 @@
 @section('superadmin')
 <html>
 <head>
-<center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>
-    <style type="text/css">
+
+<table class="table"><br>
+
+<style type="text/css">
     *{
         margin:0;
         padding:0;
@@ -19,8 +21,8 @@
 }
 .container .kotak{
     position: relative;
-    width: 30px;
-    height: 40px;
+    width: 35px;
+    height: 45px;
     background:	#aaa1a1;
     margin:0 20px;
 
@@ -30,62 +32,67 @@
 </head>
 <br>
 <body>
-        <div class="container">
-        <div class="kotak">
-            <h2>1</h2>
-        </div>
-        <div class="kotak">
-            <h2>2</h2>
-        </div>
+<div class="card text mt-3 ml-5">
+  <div class="card-header fw-bold">
+ <center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>
+  </div>
+  <div class="card-body">
+<div class="row gx-3">
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">1</div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light fs-1">2</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">3</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">4</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">5</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">6</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">7</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">8</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">9</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">10</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">11</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">12</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border bg-light fs-1">13</div>
 
-        <div class="kotak">
-            <h2>3</h2>
-        </div>
-        <div class="kotak">
-            <h2>4</h2>
-        </div>
-        <div class="kotak">
-            <h2>5</h2>
-        </div>
-        <div class="kotak">
-            <h2>6</h2>
-        </div>
-        <div class="kotak">
-            <h2>7</h2>
-        </div>
-        <div class="kotak">
-            <h2>8</h2>
-        </div>
-        <div class="kotak">
-            <h2>9</h2>
-        </div>
-        <div class="kotak">
-            <h2>10</h2>
-        </div>
-        <div class="kotak">
-            <h2>11</h2>
-        </div>
-        <div class="kotak">
-            <h2>12</h2>
-        </div>
-        <div class="kotak">
-            <h2>13</h2>
-        </div>
-    
-
-</div> 
-    <center>
-    <br>
-    <table width="745" border="1" cellspacing="0" cellpadding="5" align="center">
-    <tr align="center" bgcolor="#35a9db">
-    <td width="174">KOTAK</td>
-    <td width="353">KODE</td>
-    <td width="232">KETERANGAN</td>
-    </tr>
+    </div>
+  </div>
+  <thead><br><br>
     <tr>
-    <td>Kotak 1</td>
-    <td>Kode Bidang Barang</td>
-    <td>1 Barang umum<br>
+      <th scope="col">NO</th>
+      <th scope="col">KOTAK</th>
+      <th scope="col">KODE</th>
+      <th scope="col">KETERANGAN</th>
+    </tr>
+  </thead>
+  
+    <tr>
+      <th scope="row">1</th>
+      <td>Kotak 1</td>
+      <td>Kode Bidang Barang</td>
+      <td>1 Barang umum<br>
         2 Barang Alat Lab<br>
         3 Barang Koperasi<br>
         4 Barang UKS<br>
@@ -95,23 +102,29 @@
         8 Barang Ruang Satpam
     </td>
     </tr>
-
     <tr>
-    <td>Kotak 2, 3, & 4</td>
-    <td>Kode lokasi</td>
-    <td></td>
+      <th scope="row">2</th>
+      <td>Kotak 2, 3, & 4</td>
+      <td>Kode Lokasi</td>
+      <td>---</td>
     </tr>
-
     <tr>
-    <td>Kotak 5 & 6</td>
-    <td>Kode tahun perolehan</td>
-    <td></td>
+      <th scope="row">3</th>
+      <td>Kotak 2, 3, & 4</td>
+      <td>Kode tahun perolehan</td>
+      <td>---</td>
     </tr>
-
     <tr>
-    <td>Kotak 7</td>
-    <td>Kode kelompok alat</td>
-    <td>1 Member<br>
+      <th scope="row">4</th>
+      <td>Kotak 5 & 6</td>
+      <td>Kode Lokasi</td>
+      <td>---</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Kotak 7</td>
+      <td>Kode kelompok alati</td>
+      <td>1 Member<br>
         2 Elektronik<br>
         3 Alat Ukur<br>
         4 Alat Praktek<br>
@@ -120,20 +133,19 @@
         7 Kendaraan<br>
     </td>
     </tr>
-
     <tr>
-    <td>Kotak 8, 9 & 10</td>
-    <td>Kode nama barang</td>
-    <td></td>
+      <th scope="row">6</th>
+      <td>Kotak 8, 9 & 10</td>
+      <td>Kode nama barang</td>
+      <td>---</td>
     </tr>
-
     <tr>
-    <td>Kotak 11,12 & 13</td>
-    <td>kode urutan barang	
-    </td>
-    <td></td>
+      <th scope="row">7</th>
+      <td>Kotak 11,12 & 13</td>
+      <td>kode urutan barang/td>
+      <td>---</td>
     </tr>
+  
+</table><br><br>
 
-    </table><br>
-    </body>
 @endsection
