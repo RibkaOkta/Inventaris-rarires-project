@@ -47,7 +47,7 @@
     </div>
     <div class="mb-3">
     <label for="jumlahpinjam" class="form-label">Jumlah Pinjam</label>
-    <input  type="text" class="form-control" id="jumlahpinjam" name='jumlah' required>
+    <input  type="number" class="form-control" id="jumlahpinjam" name='jumlah' required>
     </div> 
     <div class="mb-3">
     <label for="tanggalpinjam" class="form-label">Tanggal Pinjam</label>

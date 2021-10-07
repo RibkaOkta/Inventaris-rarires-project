@@ -27,18 +27,17 @@
       <th scope="col">{{$brb->kode_brg}}</th>
       <th scope="col">{{$brb->nama_brg}}</th>
       <th scope="col">{{$brb->merk_brg}}</th>
-	  @foreach($lokasii as $loka)
+	  @foreach($lokasii as $lokasii)
 	
 	  @endforeach 
-    <th scope="col">{{$loka->ket_ruang}}</th>
 	  <th scope="col">{{$brb->kondisi_brg}}</th>
     <th scope="col">{{$brb->ket_brg}}</th>
     <th>
     <form method="POST" action="{{ route('deletebrg', $brb->no) }}">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" title="Hapus Data" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')"><i class="fas fa-trash" title="Hapus Data"></i>Diperbaiki</button>
-                            </form>
+       @csrf
+       @method('delete')
+    <button type="submit" title="Hapus Data" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')"><i class="fas fa-trash" title="Hapus Data"></i>Diperbaiki</button>
+   </form>
     </th>
     
     

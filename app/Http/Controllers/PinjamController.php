@@ -32,7 +32,6 @@ class PinjamController extends Controller
     public function destroy($id) {
 
         DB::table('pinjam')->where('id',$id)->delete();
-        return redirect('/laporanpeminjaman');
-    
+        return redirect('/laporanpeminjaman');  
     }
 }

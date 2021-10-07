@@ -16,7 +16,7 @@
       <th scope="col">Opsi</th>
     </tr>
   </thead>
-  @foreach($users as $s)
+  @foreach($sa as $s)
  <tbody>
    <tr>
      <th scope="col">{{$s->id}}</th>
