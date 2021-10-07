@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class RuangController extends Controller
 {
+    public function __construct(){
+        $this->lokasiruang = DB::table('lokasi')->get();
+    }
     public function ruang(){
         $lokasiruang = DB::table('lokasi')->get();
         return view('superadmin.dataruangan', compact('lokasiruang'));
@@ -41,5 +44,10 @@ class RuangController extends Controller
         $update = DB::table('lokasi')->where('kode_lokasi', $kodelama)->update(['kode_lokasi' => $kl, 'gedung' => $gd, 'lantai' => $lt, 'ruangan' => $rng, 'ket_ruang' => $kr]);
 
          return redirect()->route('/dataruangan');
+    }
+
+    public function buka($id){
+        $barang = DB::table('barang')->where('kode_lokasi', $id)->get();
+        return view('superadmin.dataruangan', ['barang' => $barang, 'lokasiruang' => $this->lokasiruang]);
     }
 }

@@ -1,37 +1,6 @@
 @extends('superadmin.welcome')
 
 @section('superadmin')
-<html>
-<head>
-
-<table class="table"><br>
-
-<style type="text/css">
-    *{
-        margin:0;
-        padding:0;
-        font-family: sans-serif;
-}
-.container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    max-width: 1100px;
-}
-.container .kotak{
-    position: relative;
-    width: 35px;
-    height: 45px;
-    background:	#aaa1a1;
-    margin:0 20px;
-
-}
-        
- </style>
-</head>
-<br>
-<body>
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
  <center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>

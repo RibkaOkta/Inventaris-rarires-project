@@ -27,6 +27,7 @@ Route::get('/admin','AdminController@index')->name('admin')->middleware('admin')
 Route::get('/home', 'HomeController@index')->name('home');
 
 //superadmin
+
             //dash
             Route::get('/dash', function () {
                 return view('superadmin/dash'); });
@@ -82,6 +83,7 @@ Route::get('/home', 'HomeController@index')->name('home');
             // ruangan
             Route::get('/dataruangan/{kode_lokasi}/edit','RuangController@edit');
             Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang');
-
+            Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang');
+            Route::get('/dataruangan/{kode_lokasi}/buka','RuangController@buka')->name('ruang.buka');
 
 

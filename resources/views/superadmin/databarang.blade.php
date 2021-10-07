@@ -9,16 +9,7 @@
 <center><p><h1><i class="fas fa-archway me-3"></i>DATA BARANG</h1></p>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>
-<div class="card">
-  <div class="card-header">
-    <h2>Total data  :</h2>
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-    <h5>{{$barang->count()}}</h5>
-    </blockquote>
-  </div>
-</div>
+<h5> Total Data :{{$barang->count()}}</h5>
   <table class="table caption-top">
     <thead>
     <tr>
