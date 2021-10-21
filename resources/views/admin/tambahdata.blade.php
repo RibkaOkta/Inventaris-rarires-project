@@ -1,6 +1,6 @@
-@extends('superadmin.welcome')
+@extends('admin.welcome')
 
-@section('superadmin')
+@section('admin')
 <script>
 </script>
 <div class="container">
@@ -12,8 +12,8 @@
   <form action='/tambahdata/tambah' method='POST'>
   @csrf
   <div class="mb-3">
-    <label for="kodebarang" class="form-label">Bidang Barang</label><br>
-      <select id="kodebarang"  class="form-select w-75" name='kodebidangbarang' required>
+    <label for="kodebarang" class="form-label">Kode Bidang Barang</label>
+      <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
         <option value='1'>Barang Umum</option>
         <option value='2'>Barang Alat Umum</option>
         <option value='3'>Barang TU</option>
@@ -24,16 +24,27 @@
         <option value='8'>Barang Ruang Satpam</option>
       </select>
   <div class="mb-3">
-    <label for="kodelokasi" class="form-label">Lokasi</label>
+    <label for="kodelokasi" class="form-label">Kode Lokasi</label>
     <select id="kodelokasi" class="form-select" name='kodelokasi' required>
-      @foreach($lokasi as $l)
-        <option value='{{$l->kode_lokasi}}'>Gedung {{$l->gedung}} lantai {{$l->lantai}} ruangan {{$l->ruangan}} {{$l->ket_ruang}}</option> 
+      @foreach($lokasiw as $lok)
+        <option value='{{$lok->kode_lokasi}}'>Gedung {{$lok->gedung}} lantai {{$lok->lantai}} ruangan {{$lok->ruangan}} {{$lok->ket_ruang}}</option> 
       @endforeach
     </select>
   </div>
-    @livewire('select')
+  <div class="mb-3">
+    <label for="kodekelompokalat" class="form-label">Kode Kelompok Alat</label>
+      <select id="kodekelompokalat" class="form-select" name='kodekelompokalat' required>
+        @foreach($kelompokalat as $k)
+          <option value="{{$k->kode_klmpk_alat}}">{{$k->klmpk_alat}}</option>
+        @endforeach
+      </select>
+  </div>
+  <div class="mb-3">
+      <label for="kodenamabarang" class="form-label">Kode Nama Barang</label>
+      <input type="text" class="form-control" id="namabarang" name='kodenamabarang' required>
+    </div>
     <div class="mb-3">
-    <label for="namabarang" class="form-label nambar">Nama Barang</label>
+    <label for="namabarang" class="form-label">Nama Barang</label>
     <input type="text" class="form-control" id="namabarang" required name='namabarang'>
   </div>
   <div class="mb-3">
@@ -46,14 +57,8 @@
   </div>
 
   <div class="mb-3">
-    <!-- <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required> -->
     <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-      <select id="kondisibarang" class="form-select" name='kondisi' required>
-        <option value='baik'>Baik</option>
-        <option value='rusak'>Rusak</option>
-        <option value='rusak berat'>Rusak Berat</option>
-      </select>
+    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required>
   </div>
   <div class="mb-3">
     <label for="sumberdana" class="form-label">Sumber Dana</label>
@@ -61,10 +66,7 @@
   </div>
   <div class="mb-3">
     <label for="ketbarang" class="form-label">Keterangan Barang</label>
-    <input type="text" id='ket' class="form-control" id="ketbarang" name="ketbarang" required="" 
-    oninvalid="this.setCustomValidity('Bila keterangan tidak ada, beri tanda `-`')"
- oninput="setCustomValidity('')"
-    >
+    <input type="text" class="form-control" id="ketbarang" name="ketbarang" required>
   </div>
     
   <div class="mb-3 form-check">
@@ -77,17 +79,6 @@
   </form>
 </div>
 </div>
-<!-- <script>
-$(document).ready(function(){
-  $(document),on('change','#kodebarang',function(){
-    var cat_id=$(this).val();
-    console.log(cat_id)
-  })
-});
-
-</script> -->
-
-
 @endsection
 
 

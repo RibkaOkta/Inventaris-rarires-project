@@ -1,6 +1,6 @@
-@extends('superadmin.welcome')
+@extends('admin.welcome')
 
-@section('superadmin')
+@section('admin')
 
 <div class="card">
   <div class="card-header">
@@ -28,21 +28,16 @@
       <th scope="col">{{$brb->nama_brg}}</th>
       <th scope="col">{{$brb->merk_brg}}</th>
 	  @foreach($lokasii as $lok)
-    @endforeach 
 	<th scope="col">{{$lok->ket_ruang}}</th>
-
+	  @endforeach 
 	  <th scope="col">{{$brb->kondisi_brg}}</th>
     <th scope="col">{{$brb->ket_brg}}</th>
     <th>
     <form method="POST" action="{{ route('deletebrg', $brb->no) }}">
        @csrf
        @method('delete')
-    <button type="submit" title="Hapus" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Mau Dihapus?')">Hapus</button>
+    <button type="submit" title="Hapus Data" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')"><i class="fas fa-trash" title="Hapus Data"></i>Diperbaiki</button>
    </form>
-   <form method="POST" action="{{ route('perbaiki', $brb->no) }}">
-   @csrf
-    <button type="submit" title="Diperbaiki" class="btn btn-sm btn-success" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')">Diperbaiki</button>
-    </form>
     </th>
     
     

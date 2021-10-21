@@ -1,6 +1,6 @@
-@extends('superadmin.welcome')
+@extends('admin.welcome')
 
-@section('superadmin')
+@section('admin')
 <div class="card text mt-3 ml-5">
   <div class="card-header fw-bold">
  <center><h1><i class="fas fa-book me-3"></i>Pedoman Inventaris BN<h1></center>
@@ -81,14 +81,20 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Kotak 5 & 6</td>
+      <td>Kotak 2, 3, & 4</td>
       <td>Kode tahun perolehan</td>
       <td>---</td>
     </tr>
     <tr>
       <th scope="row">4</th>
+      <td>Kotak 5 & 6</td>
+      <td>Kode Lokasi</td>
+      <td>---</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
       <td>Kotak 7</td>
-      <td>Kode kelompok alat</td>
+      <td>Kode kelompok alati</td>
       <td>1 Member<br>
         2 Elektronik<br>
         3 Alat Ukur<br>
@@ -99,15 +105,15 @@
     </td>
     </tr>
     <tr>
-      <th scope="row">5</th>
+      <th scope="row">6</th>
       <td>Kotak 8, 9 & 10</td>
       <td>Kode nama barang</td>
       <td>---</td>
     </tr>
     <tr>
-      <th scope="row">6</th>
+      <th scope="row">7</th>
       <td>Kotak 11,12 & 13</td>
-      <td>kode urutan barang</td>
+      <td>kode urutan barang/td>
       <td>---</td>
     </tr>
   

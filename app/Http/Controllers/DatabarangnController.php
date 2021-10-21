@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,9 +10,10 @@ class DatabarangnController extends Controller
     public function index(){
         $kelompokalat = DB::table('klmpk_alat')->get();
         $lokasi = DB::table('lokasi')->get();
-        $barang = DB::table('barang')->get();
+        $barang = DB::table('barang')->orderBy('kode_bidang')->orderby('kode_lokasi')->get();
 
         return view('superadmin.databarang', compact('kelompokalat','lokasi','barang'));
+
     }
 
     public function cari(Request $request)
@@ -48,9 +49,13 @@ class DatabarangnController extends Controller
         $tglnew = date('y', strtotime($tgl));
 
         //mencari urutan barang
-        $data = DB::table('barang')->where('kode_brg', $knb)->where('klmpk_alat',$kkl)->count();
-        $data += 1;
-       
+        $data = DB::table('barang')->where([
+            ['kode_brg', $knb],
+            ['klmpk_alat', $kkl],
+            ['kode_lokasi', $kl],
+            ['nama_brg', $nb]
+        ])->count();
+        $data += 1; 
         $nomor = str_pad((string)$data, 3, "0", STR_PAD_LEFT); 
 
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
@@ -108,17 +113,13 @@ class DatabarangnController extends Controller
         //     dump($rusak);
         return view('superadmin.dash',['new'=>$baru,'rusak'=>$rusak]);
     }
-    // public function rusak(){
-    //     $rusak=DB::table('barang')->where('kondisi_brg','like','rusak%')->orderby('tanggal','desc')->limit(5)->get();
-    //     dump($rusak);
-    //     return view('superadmin.dash',['rusak'=>$rusak]);
-    // }
+    
     public function brgrusakberat(){
         $brgrusakberat = DB::table('barang')
         ->where('kondisi_brg','like','rusak%')
         ->get();
-        $lokasii = DB::table('barang')
-        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')->where('kondisi_brg','=','rusak berat')
+        $lokasii = DB::table('barang')->where('kondisi_brg','like','rusak%')
+        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')
         ->get();
        
         return view('superadmin.brgrusakberat',compact('brgrusakberat','lokasii'));
@@ -127,4 +128,24 @@ class DatabarangnController extends Controller
         DB::table('barang')->where('no',$no)->delete();
         return redirect('/brgrusakberat');
     }
+    public function hps(){
+        $hapus=DB::table('barang')->where('kondisi_brg','=','dihapus')->get();
+        $lokasi = DB::table('barang')
+        ->join('lokasi','barang.kode_lokasi','lokasi.kode_lokasi')
+        ->get();
+        return view('superadmin.hapusdata',['hapus'=>$hapus,'lokasi'=>$lokasi]);
+    }
+
+    public function update_perbaiki($id){
+        $brg = DB::table('barang')->where('no', $id)
+        ->update(['kondisi_brg' => 'Baik']);
+
+        return redirect()->back();
+    }
+    public function update_kembali($id){
+        $brg = DB::table('barang')->where('no', $id)
+        ->update(['kondisi_brg' => 'dihapus']);
+        return redirect()->back();
+    }
 }
+

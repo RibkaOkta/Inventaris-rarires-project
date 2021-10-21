@@ -25,8 +25,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script>
           $(document).ready(function(){
-              $("#exampleModal").modal("show");
-              
+              $("#exampleModal").modal("show");        
           });
         </script>
     <body>
@@ -144,7 +143,7 @@
           </a>
           </li>
               <li class="nav-item">
-              <a href="/databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                    <i class="fas fa-box me-3"></i>Data Barang
           </a>
           </li>
@@ -164,15 +163,12 @@
                   <i class="fas fa-users me-3"></i>Users
           </a>
                <div class="dropdown-menu">
-               <a class="dropdown-item fs-6" href="#">Super Admin</a>
-               <a class="dropdown-item fs-6" href="#">Admin</a>
-               <div class="dropdown-devider"></div>
-               <a class="dropdown-item fs-6" href="#">User</a>
+               <a class="dropdown-item fs-6" href="/sa">Data User</a>
               </div>
            </li>
              <li class="nav-item dropdown">
-              <a href="/laporanpeminjaman" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" > 
-              <i class="fas fa-scroll me-3"></i>Laporan
+              <a href="#" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" > 
+              <i class="fas fa-newspaper me-3"></i>Laporan
              </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
@@ -186,7 +182,7 @@
                 <div class="container-fluid px-4">
                 <div id="main">
                   <button class="openbtn" onclick="openNav()">&#9776;</button>
-                    @yield('superadmin')
+                    @yield('admin')
                 </div>
                 </div>
             </div>

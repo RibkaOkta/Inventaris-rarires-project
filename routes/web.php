@@ -32,7 +32,8 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/dash', function () {
                 return view('superadmin/dash'); });
             Route::get('/dash','DataBarangnController@new')->name('new');
-         
+            Route::get('/dataterhapus', function () {
+                return view('superadmin.hapusdata'); });
 
             Route::get('/users', function () {
                 return view('superadmin/users');
@@ -53,7 +54,8 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/databarang/cari',"DatabarangnController@cari");
             Route::get('/dataruangan/cari',"RuangController@cari");
             Route::get('/dataruangan', "RuangController@ruang")->name("dataruangan");
-
+            Route::post('/databarang/hapusdata/{id}', 'DataBarangnController@update_kembali')->name('migrasi');
+            Route::get('/tambahdata', "TambahDataController@kelompokalat");
 
 
             //rusak
@@ -62,6 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
             });
             Route::delete('/brgrusakberat/deletebrg/{id}','DataBarangnController@deletebrg')->name('deletebrg');
             Route::get('/brgrusakberat', 'DataBarangnController@brgrusakberat');
+            Route::post('/brgrusakberat/perbaiki/{id}', 'DataBarangnController@update_perbaiki')->name('perbaiki');
 
 
             //pinjam
@@ -83,7 +86,32 @@ Route::get('/home', 'HomeController@index')->name('home');
             // ruangan
             Route::get('/dataruangan/{kode_lokasi}/edit','RuangController@edit');
             Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang');
-            Route::post('/lokasi/update', 'RuangController@updateruang')->name('updateruang');
             Route::get('/dataruangan/{kode_lokasi}/buka','RuangController@buka')->name('ruang.buka');
+            //convert 
+            Route::get('/pdf', 'PdfController@pdf')->name('print');
+            //hapus
+            Route::get('/dataterhapus', function () {
+                return view('superadmin.hapusdata'); });
+            Route::get('/dataterhapus', 'DataBarangnController@hps')->name('hps');
 
+            //eksport
+            Route::get('/exportbarang', "DatabarangnController@Barangexport")->name("exportbarang");
+            
+
+//admin
+// Route::get('/a/aturan', function () {
+//     return view('admin.aturan');
+// });
+// //dash
+// Route::get('/a/dash', function () {
+//     return view('admin.dash'); });
+// Route::get('/a/dash','AdminController@newa')->name('newaa');
+// Route::get('/a/tambahdata','AdminController@lokasi')->name('newa');
+
+// Route::get('a/databarang',"AdminController@data");
+// Route::get('a/databarang/cari',"AdminController@cari");
+// Route::post('a/tambahdata/tambah', 'AdminController@store');
+// Route::get('a/databarang/{no}/edit','AdminController@edit');
+// Route::post('a/barang/update', 'AdminController@update')->name('update');
+// Route::post('a/databarang/{no}','AdminController@hapus')->name('delete');
 

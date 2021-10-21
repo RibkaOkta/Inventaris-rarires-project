@@ -1,6 +1,6 @@
-@extends('superadmin.welcome')
+@extends('admin.welcome')
 
-@section('superadmin')
+@section('admin')
 
 <form class="d-flex" action="/databarang/cari" method="GET">
          <input class="form-control me-2" type="text" name="cari" class="form-control" placeholder="Cari data barang" value="{{ old('cari') }}">
@@ -15,10 +15,13 @@
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-    <h5>{{$barang->count()}}</h5>
+    <h5>{{$barangs->count()}}</h5>
     </blockquote>
   </div>
 </div>
+<div class="row">
+            <a href="{{ route('print')}}" class="btn btn-sm btn-danger" style="margin-left:2em;width:5em;"> Print</a>
+        </div>
   <table class="table caption-top">
     <thead>
     <tr>
@@ -33,21 +36,20 @@
     </tr>
   </thead>
   <tbody>
-	@foreach($barang as $barangs)
+	@foreach($barangs as $barang)
 	<tr>
-      <td>{{$barangs->no}}</td>
-      <td>{{$barangs->nama_brg}}</td>
-      <td>{{$barangs->kode_brg}}</td>
-      <td>{{$barangs->merk_brg}}</td>
-	  <td>{{$barangs->kondisi_brg}}</td>
-      <td>{{$barangs->sumber_dana}}</td>
-      <td>{{$barangs->ket_brg}}</td>
-	  <td><a title="Edit" href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm w-75">Edit</button></a>
-    <!-- <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a> -->
-    <form method="POST" action="{{ route('migrasi', $barangs->no) }}">
-   @csrf
-    <button type="submit" title="Hapus" class="btn btn-sm btn-danger w-75" onclick="return confirm('Apakah Barang Ini Mau Dihapus?')">Hapus</button>
-    </form>
+      <td>{{$barang->no}}</td>
+      <td>{{$barang->nama_brg}}</td>
+      <td>{{$barang->kode_brg}}</td>
+      <td>{{$barang->merk_brg}}</td>
+	  <td>{{$barang->kondisi_brg}}</td>
+      <td>{{$barang->sumber_dana}}</td>
+      <td>{{$barang->ket_brg}}</td>
+	  <td><a href="{{url('databarang/'.$barang->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm">Edit</button></a>
+    <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barang->no}}').submit();" class="btn btn-danger btn-sm">Delete</a>
+                  <form id="delete-{{$barangs->no}}" method="post" action="{{route('delete',$barang->no)}}" style="display: none;">
+                  @csrf
+                </form>
 
 	</td>
     </tr>
@@ -120,14 +122,8 @@
   </div>
 
   <div class="mb-3">
-    <!-- <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required> -->
     <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-      <select id="kondisibarang" class="form-select" name='kondisi' required >
-        <option value='baik'>Baik</option>
-        <option value='rusak'>Rusak</option>
-        <option value='rusak berat'>Rusak Berat</option>
-      </select>
+    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required value='{{$data[0]->kondisi_brg}}'>
   </div>
   <div class="mb-3">
     <label for="sumberdana" class="form-label">Sumber Dana</label>
@@ -135,7 +131,7 @@
   </div>
   <div class="mb-3">
     <label for="ketbarang" class="form-label">Keterangan Barang</label>
-    <input type="text" class="form-control" id="ketbarang" name="ketbarang" required value='{{$data[0]->ket_brg}}'>
+    <input type="text" class="form-control" id="ketbarang" name="ketbarang"  value='{{$data[0]->ket_brg}}'>
   </div>
     
   <div class="mb-3 form-check">
