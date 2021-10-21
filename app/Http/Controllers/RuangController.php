@@ -47,7 +47,19 @@ class RuangController extends Controller
     }
 
     public function buka($id){
+       
         $barang = DB::table('barang')->where('kode_lokasi', $id)->get();
-        return view('superadmin.dataruangan', ['barang' => $barang, 'lokasiruang' => $this->lokasiruang]);
+        $barang->toArray();
+        $newbrg = [];
+     
+        for($i = 0;$i < count($barang); $i++){
+            list($a,$b,$c,$d,$e,$f) = explode(".", $barang[$i]->no);
+            $newbrg[$i]['no'] = $barang[$i]->kode_brg; 
+            $newbrg[$i]['nama_brg'] = $barang[$i]->nama_brg; 
+            $newbrg[$i]['merk_brg'] = $barang[$i]->merk_brg; 
+            $newbrg[$i]['kode_lokasi'] = $f; 
+        }
+       // dd($newbrg);
+        return view('superadmin.dataruangan', ['barang' => $barang, 'lokasiruang' => $this->lokasiruang, 'newbarang' => $newbrg]);
     }
 }

@@ -48,7 +48,9 @@
 
     </div>
   </div>
-  <thead><br><br>
+
+<table class="table">
+  <thead ><br><br>
     <tr>
       <th scope="col">NO</th>
       <th scope="col">KOTAK</th>
@@ -62,13 +64,13 @@
       <td>Kotak 1</td>
       <td>Kode Bidang Barang</td>
       <td>1 Barang umum<br>
-        2 Barang Alat Lab<br>
-        3 Barang Koperasi<br>
-        4 Barang UKS<br>
-        5 Barang TU<br>
-        6 Barang Ruang Guru<br>
-        7 Barang Ruang Perpustakaan<br>
-        8 Barang Ruang Satpam
+          2 Barang Alat Lab<br>
+          3 Barang Koperasi<br>
+          4 Barang UKS<br>
+          5 Barang TU<br>
+          6 Barang Ruang Guru<br>
+          7 Barang Ruang Perpustakaan<br>
+          8 Barang Ruang Satpam
     </td>
     </tr>
     <tr>
@@ -79,20 +81,14 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Kotak 2, 3, & 4</td>
+      <td>Kotak 5 & 6</td>
       <td>Kode tahun perolehan</td>
       <td>---</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>Kotak 5 & 6</td>
-      <td>Kode Lokasi</td>
-      <td>---</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
       <td>Kotak 7</td>
-      <td>Kode kelompok alati</td>
+      <td>Kode kelompok alat</td>
       <td>1 Member<br>
         2 Elektronik<br>
         3 Alat Ukur<br>
@@ -103,16 +99,21 @@
     </td>
     </tr>
     <tr>
-      <th scope="row">6</th>
+      <th scope="row">5</th>
       <td>Kotak 8, 9 & 10</td>
       <td>Kode nama barang</td>
-      <td>---</td>
+      <td></td>
     </tr>
     <tr>
-      <th scope="row">7</th>
+      <th scope="row">6</th>
       <td>Kotak 11,12 & 13</td>
-      <td>kode urutan barang/td>
+<<<<<<< HEAD
+      <td>kode urutan barang</td>
       <td>---</td>
+=======
+      <td>kode urutan barang/td>
+      <td></td>
+>>>>>>> def1db6f7371a6c1d670c7e9843c7046c1a334cd
     </tr>
   
 </table><br><br>

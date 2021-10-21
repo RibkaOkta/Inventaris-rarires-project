@@ -14,10 +14,11 @@ class CreateJenisKlmpkAlat extends Migration
     public function up()
     {
         Schema::create('jenis_klmpk_alat', function (Blueprint $table) {
-            $table->increments('kode_barang');
-            $table->string('kode_klmpk_alat');
-            $table->string('jenis_klmpk_alat');
-         
+            $table->increments('id');
+            $table->string('klmpk-alat');
+            $table->string('kode_brg');
+            $table->string('jk_alat');
+            $table->timestamps();
         });
     }
 

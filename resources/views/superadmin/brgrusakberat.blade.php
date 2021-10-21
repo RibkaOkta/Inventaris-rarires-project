@@ -14,10 +14,10 @@
       <th scope="col">Kode Barang</th>
       <th scope="col">Nama Barang</th>
       <th scope="col">Merk Barang</th>
-	  <th scope="col">Lokasi</th>
-	  <th scope="col">Kondisi</th>
-    <th scope="col">Keterangan</th>
-	  <th scope="col">Opsi</th>
+      <th scope="col">Lokasi</th>
+      <th scope="col">Kondisi</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Opsi</th>
     </tr>
   </thead>
   @foreach($brgrusakberat as $brb)
@@ -28,16 +28,21 @@
       <th scope="col">{{$brb->nama_brg}}</th>
       <th scope="col">{{$brb->merk_brg}}</th>
 	  @foreach($lokasii as $lok)
+    @endforeach 
 	<th scope="col">{{$lok->ket_ruang}}</th>
-	  @endforeach 
+
 	  <th scope="col">{{$brb->kondisi_brg}}</th>
     <th scope="col">{{$brb->ket_brg}}</th>
     <th>
     <form method="POST" action="{{ route('deletebrg', $brb->no) }}">
        @csrf
        @method('delete')
-    <button type="submit" title="Hapus Data" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')"><i class="fas fa-trash" title="Hapus Data"></i>Diperbaiki</button>
+    <button type="submit" title="Hapus" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Barang Ini Mau Dihapus?')">Hapus</button>
    </form>
+   <form method="POST" action="{{ route('perbaiki', $brb->no) }}">
+   @csrf
+    <button type="submit" title="Diperbaiki" class="btn btn-sm btn-success" onclick="return confirm('Apakah Barang Ini Sudah Diperbaiki?')">Diperbaiki</button>
+    </form>
     </th>
     
     
@@ -46,7 +51,7 @@
   @endforeach
 </table>
 
-  </div>
+  </div>    
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -70,7 +75,6 @@
   }
 });
 };
-
   </script>
 @endsection
 

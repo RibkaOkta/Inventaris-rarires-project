@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBidangBrg extends Migration
+class Datahapus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,7 @@ class CreateBidangBrg extends Migration
      */
     public function up()
     {
-        Schema::create('bidang_brg', function (Blueprint $table) {
-            $table->increments('kode_bidang_brg');
-            $table->string('bidang_brg');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -27,6 +23,6 @@ class CreateBidangBrg extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bidang_brg');
+        //
     }
 }

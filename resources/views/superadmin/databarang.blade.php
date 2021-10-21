@@ -11,7 +11,7 @@
 <center>
 <div class="card">
   <div class="card-header">
-    <h2>Total data  :</h2>
+    <h2>Total data  </h2>
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
@@ -42,16 +42,24 @@
 	  <td>{{$barangs->kondisi_brg}}</td>
       <td>{{$barangs->sumber_dana}}</td>
       <td>{{$barangs->ket_brg}}</td>
+<<<<<<< HEAD
+	  <td><a title="Edit" href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm w-75">Edit</button></a>
+    <!-- <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a> -->
+    <form method="POST" action="{{ route('migrasi', $barangs->no) }}">
+   @csrf
+    <button type="submit" title="Hapus" class="btn btn-sm btn-danger w-75" onclick="return confirm('Apakah Barang Ini Mau Dihapus?')">Hapus</button>
+    </form>
+
+=======
 	  <td><a href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm">Edit</button></a>
     <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a>
                   <form id="delete-{{$barangs->no}}" method="post" action="{{route('delete',$barangs->no)}}" style="display: none;">
                   @csrf
-                </form>
-
+   </form>
+>>>>>>> def1db6f7371a6c1d670c7e9843c7046c1a334cd
 	</td>
     </tr>
 	@endforeach
-    
   </tbody>
 </table>
 @isset($data)
@@ -119,8 +127,14 @@
   </div>
 
   <div class="mb-3">
+    <!-- <label for="kondisibarang" class="form-label">Kondisi Barang</label>
+    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required> -->
     <label for="kondisibarang" class="form-label">Kondisi Barang</label>
-    <input type="text" class="form-control" id="kondisibarang" name='kondisi' required value='{{$data[0]->kondisi_brg}}'>
+      <select id="kondisibarang" class="form-select" name='kondisi' required >
+        <option value='baik'>Baik</option>
+        <option value='rusak'>Rusak</option>
+        <option value='rusak berat'>Rusak Berat</option>
+      </select>
   </div>
   <div class="mb-3">
     <label for="sumberdana" class="form-label">Sumber Dana</label>

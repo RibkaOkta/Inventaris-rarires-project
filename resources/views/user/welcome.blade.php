@@ -172,7 +172,7 @@
            </li>
              <li class="nav-item dropdown">
               <a href="/laporanpeminjaman" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" > 
-              <i class="fas fa-newspaper me-3"></i>Laporan
+              <i class="fas fa-scroll me-3"></i>Laporan
              </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>

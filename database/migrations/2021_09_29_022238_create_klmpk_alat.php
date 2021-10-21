@@ -14,9 +14,9 @@ class CreateKlmpkAlat extends Migration
     public function up()
     {
         Schema::create('klmpk_alat', function (Blueprint $table) {
-            $table->increments('kode_klmpk_alat');
+            $table->string('kode_klmpk_alat');
             $table->string('klmpk_alat');
-            $table->timestamp();
+      
         });
     }
 

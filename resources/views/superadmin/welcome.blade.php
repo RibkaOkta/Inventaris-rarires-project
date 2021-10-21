@@ -27,6 +27,14 @@
               $("#exampleModal").modal("show");        
           });
         </script>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
     <body>
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
@@ -142,6 +150,11 @@
           </a>
           </li>
               <li class="nav-item">
+              <a href="/kelompok_alat" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                  <i class="fas fa-book me-3"></i>Kelompok Alat
+          </a>
+          </li>
+              <li class="nav-item">
               <a href="/databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                    <i class="fas fa-box me-3"></i>Data Barang
           </a>
@@ -173,6 +186,8 @@
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
                <a href="/laporanpeminjaman" class="dropdown-item fs-6">
               Laporan Peminjaman</a>
+              <a href="/dataterhapus" class="dropdown-item fs-6">
+              Laporan Penghapusan Data</a>
               </div>
              </li>
           </ul>
