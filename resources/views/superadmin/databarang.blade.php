@@ -11,7 +11,7 @@
 <center>
 <div class="card">
   <div class="card-header">
-    <h2>Total data  :</h2>
+    <h2>Total data  </h2>
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
@@ -46,12 +46,10 @@
     <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a>
                   <form id="delete-{{$barangs->no}}" method="post" action="{{route('delete',$barangs->no)}}" style="display: none;">
                   @csrf
-                </form>
-
+   </form>
 	</td>
     </tr>
 	@endforeach
-    
   </tbody>
 </table>
 @isset($data)

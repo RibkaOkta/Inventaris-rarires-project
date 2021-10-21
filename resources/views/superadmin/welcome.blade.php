@@ -143,6 +143,11 @@
           </a>
           </li>
               <li class="nav-item">
+              <a href="/kelompok_alat" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                  <i class="fas fa-book me-3"></i>Kelompok Alat
+          </a>
+          </li>
+              <li class="nav-item">
               <a href="/databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                    <i class="fas fa-box me-3"></i>Data Barang
           </a>

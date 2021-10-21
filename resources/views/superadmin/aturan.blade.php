@@ -62,13 +62,13 @@
       <td>Kotak 1</td>
       <td>Kode Bidang Barang</td>
       <td>1 Barang umum<br>
-        2 Barang Alat Lab<br>
-        3 Barang Koperasi<br>
-        4 Barang UKS<br>
-        5 Barang TU<br>
-        6 Barang Ruang Guru<br>
-        7 Barang Ruang Perpustakaan<br>
-        8 Barang Ruang Satpam
+          2 Barang Alat Lab<br>
+          3 Barang Koperasi<br>
+          4 Barang UKS<br>
+          5 Barang TU<br>
+          6 Barang Ruang Guru<br>
+          7 Barang Ruang Perpustakaan<br>
+          8 Barang Ruang Satpam
     </td>
     </tr>
     <tr>
@@ -106,13 +106,13 @@
       <th scope="row">6</th>
       <td>Kotak 8, 9 & 10</td>
       <td>Kode nama barang</td>
-      <td>---</td>
+      <td></td>
     </tr>
     <tr>
       <th scope="row">7</th>
       <td>Kotak 11,12 & 13</td>
       <td>kode urutan barang/td>
-      <td>---</td>
+      <td></td>
     </tr>
   
 </table><br><br>

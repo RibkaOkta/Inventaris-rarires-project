@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exports\BarangExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -127,4 +129,9 @@ class DatabarangnController extends Controller
         DB::table('barang')->where('no',$no)->delete();
         return redirect('/brgrusakberat');
     }
+    public function BarangExport() 
+{
+    return Excel::download(new BarangExport, 'barang.xlsx');
+    }
+
 }

@@ -32,8 +32,11 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/dash', function () {
                 return view('superadmin/dash'); });
             Route::get('/dash','DataBarangnController@new')->name('new');
-         
-
+             
+            Route::get('/kelompok_alat', function () {
+                return view('superadmin/kelompok_alat');
+                        });
+            
             Route::get('/users', function () {
                 return view('superadmin/users');
                         });
@@ -54,6 +57,8 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::get('/dataruangan/cari',"RuangController@cari");
             Route::get('/dataruangan', "RuangController@ruang")->name("dataruangan");
 
+            //Ekspor
+            Route::get('/exportbarang', "DatabarangnController@Barangexport")->name("exportbarang");
 
 
             //rusak
@@ -73,7 +78,7 @@ Route::get('/home', 'HomeController@index')->name('home');
             Route::delete('/pinjambarang/{id}', 'PinjamController@destroy')->name('pinjambarang.destroy');
 
 
-            Route::get('/laporanpeminjaman','PinjamController@index');
+             Route::get('/laporanpeminjaman','PinjamController@index');
              Route::get('/tambahdata', 'DataBarangnController@tambah');
              Route::post('/tambahdata/tambah', 'DataBarangnController@store');
              Route::get('/databarang/{no}/edit','DataBarangnController@edit');
