@@ -7,7 +7,6 @@ use Livewire\Component;
 use App\Exports\BarangExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
