@@ -17,7 +17,7 @@ class CreateStok extends Migration
             $table->id('id');
             $table->integer('kode_brg');
             $table->integer('stok_brg');
-            $table->timestamps();
+            $table->timestamps ();
         });
     }
 

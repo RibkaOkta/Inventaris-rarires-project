@@ -16,7 +16,11 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.0",
+<<<<<<< HEAD
         "livewire/livewire": "^2.6",
+=======
+        "maatwebsite/excel": "^3.1",
+>>>>>>> def1db6f7371a6c1d670c7e9843c7046c1a334cd
         "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {

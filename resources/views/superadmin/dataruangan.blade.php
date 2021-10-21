@@ -8,7 +8,16 @@
 
 
 <center><p><h1><i class="fas fa-archway me-3"></i>DATA RUANGAN</h1></p>
-
+<div class="card">
+  <div class="card-header">
+    <h2>Total data  </h2>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+    <h5>{{$lokasiruang->count()}}</h5>
+    </blockquote>
+  </div>
+</div>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>
   <table class="table caption-top">
@@ -81,7 +90,6 @@
 	  </form>
 </div>
    @endisset
-
 @isset($barang)
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
   <div class="modal-dialog">
@@ -94,6 +102,7 @@
 	 
   @csrf
  <div>
+ <a href="{{route('exportbarang')}}"class="btn btn-success"><i class="fas fa-share-square"></i> Export</a>
    <table class='table table-stripped' style="width:50%">
       <thead>
           <tr>

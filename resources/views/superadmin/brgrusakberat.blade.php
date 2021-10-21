@@ -14,10 +14,10 @@
       <th scope="col">Kode Barang</th>
       <th scope="col">Nama Barang</th>
       <th scope="col">Merk Barang</th>
-	  <th scope="col">Lokasi</th>
-	  <th scope="col">Kondisi</th>
-    <th scope="col">Keterangan</th>
-	  <th scope="col">Opsi</th>
+      <th scope="col">Lokasi</th>
+      <th scope="col">Kondisi</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Opsi</th>
     </tr>
   </thead>
   @foreach($brgrusakberat as $brb)
@@ -51,7 +51,7 @@
   @endforeach
 </table>
 
-  </div>
+  </div>    
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -75,7 +75,6 @@
   }
 });
 };
-
   </script>
 @endsection
 

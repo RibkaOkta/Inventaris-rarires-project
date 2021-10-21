@@ -1,7 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Livewire\Component;
+
+use App\Exports\BarangExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -128,6 +134,7 @@ class DatabarangnController extends Controller
         DB::table('barang')->where('no',$no)->delete();
         return redirect('/brgrusakberat');
     }
+
     public function hps(){
         $hapus=DB::table('barang')->where('kondisi_brg','=','dihapus')->get();
         $lokasi = DB::table('barang')
@@ -147,5 +154,12 @@ class DatabarangnController extends Controller
         ->update(['kondisi_brg' => 'dihapus']);
         return redirect()->back();
     }
+
+    public function BarangExport() 
+{
+    return Excel::download(new BarangExport, 'barang.xlsx');
+    }
+
+
 }
 
