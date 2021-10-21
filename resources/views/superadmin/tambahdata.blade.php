@@ -13,7 +13,7 @@
   @csrf
   <div class="mb-3">
     <label for="kodebarang" class="form-label">Kode Bidang Barang</label>
-      <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
+    <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
         <option value='1'>Barang Umum</option>
         <option value='2'>Barang Alat Umum</option>
         <option value='3'>Barang TU</option>

@@ -17,18 +17,18 @@ class LoginController extends Controller
     |
     */
     use AuthenticatesUsers;
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+    
     
     // protected $redirectTo = RouteServiceProvider::HOME;
     public function redirectTo(){
+        
         switch(Auth::user()->role){
             case 1:
+                session()->flash('message', 'your message');
                 $this->redirectTo = '/superadmin';
-                return $this->redirectTo;
+                
+                
+                return  $this->redirectTo;
                 break;
             case 2:
                 $this->redirectTo = '/admin';
@@ -41,7 +41,11 @@ class LoginController extends Controller
                 return $this->redirectTo;
             break;
         }
+
+        
     }
+
+    
     /**
      * Create a new controller instance.
      *
@@ -50,6 +54,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+       
     }
  
 }

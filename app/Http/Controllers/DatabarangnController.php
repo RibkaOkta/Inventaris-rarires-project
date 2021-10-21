@@ -56,7 +56,7 @@ class DatabarangnController extends Controller
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
-        return redirect()->route('databarang');
+        return redirect('databarang')->with('success', 'Data Berhasil Tersimpan!');
     }
     public function edit($no)
     {
@@ -94,13 +94,12 @@ class DatabarangnController extends Controller
         $kodebaru = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $update = DB::table('barang')->where('no', $kodelama)->update(['no' => $kodebaru, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
- 
-        return redirect()->route('databarang');
+        return redirect('databarang')->with('success', 'Data Berhasil Terupdate!');
     }
     public function hapus($no)
     {
         $delete = DB::table('barang')->where('no', $no)->delete();
-        return redirect()->route('databarang');
+        return redirect('databarang')->with('danger', 'Data Berhasil Dihapus!');
     }
     public function new(){
         $baru=DB::table('barang')->orderby('tanggal','desc')->limit(5)->get();

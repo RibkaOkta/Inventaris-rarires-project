@@ -1,7 +1,13 @@
 @extends('superadmin.welcome')
 
 @section('superadmin')
-
+@if(Session::has('message'))
+<script>Swal.fire(
+  'Login Berhasil!',
+  'HAHAHA!',
+  'success'
+)</script>
+@endif
 <div class="card text-white bg-white" style="max-width: 100em;">
   <div class="card-header bg-dark">Inventaris</div>
   <div class="card-body">
