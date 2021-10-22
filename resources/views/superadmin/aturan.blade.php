@@ -107,13 +107,8 @@
     <tr>
       <th scope="row">6</th>
       <td>Kotak 11,12 & 13</td>
-<<<<<<< HEAD
       <td>kode urutan barang</td>
       <td>---</td>
-=======
-      <td>kode urutan barang/td>
-      <td></td>
->>>>>>> def1db6f7371a6c1d670c7e9843c7046c1a334cd
     </tr>
   
 </table><br><br>

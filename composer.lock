@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "ee728db114851077b49adc3d824923a0",
-=======
-    "content-hash": "9d7fa796f272810b478bc72627a5f622",
->>>>>>> 24d387f442896257170ebcbe45aca50101bf5d41
+    "content-hash": "231fdb6de0f2141dc58df1f13988ed71",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3352,7 +3348,6 @@
             "time": "2021-09-25T23:10:38+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "realrashid/sweet-alert",
             "version": "v4.0.0",
             "source": {
@@ -3391,33 +3386,6 @@
                 "files": [
                     "src/functions.php"
                 ]
-=======
-            "name": "sabberworm/php-css-parser",
-            "version": "8.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
-                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/d217848e1396ef962fb1997cf3e2421acba7f796",
-                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "codacy/coverage": "^1.4",
-                "phpunit/phpunit": "~4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Sabberworm\\CSS": "lib/"
-                }
->>>>>>> 24d387f442896257170ebcbe45aca50101bf5d41
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3425,7 +3393,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
                     "name": "Rashid Ali",
                     "email": "realrashid05@gmail.com",
                     "homepage": "https://realrashid.com",
@@ -3469,7 +3436,40 @@
                 }
             ],
             "time": "2021-06-14T19:01:35+00:00"
-=======
+        },
+        {
+            "name": "sabberworm/php-css-parser",
+            "version": "8.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/d217848e1396ef962fb1997cf3e2421acba7f796",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Sabberworm\\CSS": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
                     "name": "Raphael Schweikert"
                 }
             ],
@@ -3485,7 +3485,6 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.3.1"
             },
             "time": "2020-06-01T09:10:00+00:00"
->>>>>>> 24d387f442896257170ebcbe45aca50101bf5d41
         },
         {
             "name": "santigarcor/laratrust",

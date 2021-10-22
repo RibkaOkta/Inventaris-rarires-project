@@ -35,28 +35,20 @@
   <tbody>
 	@foreach($barang as $barangs)
 	<tr>
-      <td>{{$barangs->no}}</td>
-      <td>{{$barangs->nama_brg}}</td>
-      <td>{{$barangs->kode_brg}}</td>
-      <td>{{$barangs->merk_brg}}</td>
-	  <td>{{$barangs->kondisi_brg}}</td>
-      <td>{{$barangs->sumber_dana}}</td>
-      <td>{{$barangs->ket_brg}}</td>
-<<<<<<< HEAD
-	  <td><a title="Edit" href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm w-75">Edit</button></a>
+      <td scope="col">{{$barangs->no}}</td>
+      <td scope="col">{{$barangs->nama_brg}}</td>
+      <td scope="col">{{$barangs->kode_brg}}</td>
+      <td scope="col">{{$barangs->merk_brg}}</td>
+	  <td scope="col">{{$barangs->kondisi_brg}}</td>
+      <td scope="col">{{$barangs->sumber_dana}}</td>
+      <td scope="col">{{$barangs->ket_brg}}</td>
+	  <td scope="col"><a title="Edit" href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm w-75">Edit</button></a>
     <!-- <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a> -->
     <form method="POST" action="{{ route('migrasi', $barangs->no) }}">
    @csrf
     <button type="submit" title="Hapus" class="btn btn-sm btn-danger w-75" onclick="return confirm('Apakah Barang Ini Mau Dihapus?')">Hapus</button>
     </form>
 
-=======
-	  <td><a href="{{url('databarang/'.$barangs->no.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm">Edit</button></a>
-    <a href="" onclick="if(confirm('Do you want to delete item?'))event.preventDefault(); document.getElementById('delete-{{$barangs->no}}').submit();" class="btn btn-danger btn-sm">Delete</a>
-                  <form id="delete-{{$barangs->no}}" method="post" action="{{route('delete',$barangs->no)}}" style="display: none;">
-                  @csrf
-   </form>
->>>>>>> def1db6f7371a6c1d670c7e9843c7046c1a334cd
 	</td>
     </tr>
 	@endforeach

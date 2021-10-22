@@ -16,12 +16,9 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.0",
-<<<<<<< HEAD
-        "realrashid/sweet-alert": "^4.0",
-=======
         "livewire/livewire": "^2.6",
         "maatwebsite/excel": "^3.1",
->>>>>>> 24d387f442896257170ebcbe45aca50101bf5d41
+        "realrashid/sweet-alert": "^4.0",
         "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {

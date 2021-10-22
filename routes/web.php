@@ -89,6 +89,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
              Route::get('/laporanpeminjaman','PinjamController@index');
+             Route::get('/tambahdata/search','DataBarangnController@cari')->name('barang.cari');
              Route::get('/tambahdata', 'DataBarangnController@tambah');
              Route::post('/tambahdata/tambah', 'DataBarangnController@store');
              Route::get('/databarang/{no}/edit','DataBarangnController@edit');

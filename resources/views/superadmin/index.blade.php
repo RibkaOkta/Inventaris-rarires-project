@@ -4,7 +4,7 @@
 @if(Session::has('message'))
 <script>Swal.fire(
   'Login Berhasil!',
-  'HAHAHA!',
+  '',
   'success'
 )</script>
 @endif

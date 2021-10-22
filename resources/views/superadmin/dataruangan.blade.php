@@ -93,7 +93,7 @@
 @isset($barang)
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" style="width:45rem;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Daftar Barang di Ruangan</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -101,7 +101,7 @@
       <div class="modal-body">
 	 
   @csrf
- <div>
+ <div  class="w-100 mb-3" >
  <a href="{{route('exportbarang')}}"class="btn btn-success"><i class="fas fa-share-square"></i> Export</a>
    <table class='table table-stripped' style="width:50%">
       <thead>
@@ -110,28 +110,26 @@
             <th>Nama Barang</th>
             <th>Merk Barang</th>
             <th>Kondisi Barang</th>
+            <th>Lokasi Barang</th>
             <th>Keterangan Barang</th>
           </tr>
       </thead>
       <tbody>
-        <!-- @foreach($newbarang as $b)
-          <tr>
-             <td>{{$b['no']}}</td>
-             <td>{{$b['nama_brg']}}</td>
-             <td>{{$b['merk_brg']}}</td>
-             <td>{{$b['kode_lokasi']}}</td>
-             <td>{{$b['no']}}</td>
-          </tr>
-        @endforeach -->
+        
         @foreach($barang as $b)
           <tr>
              <td>{{$b->no}}</td>
              <td>{{$b->nama_brg}}</td>
              <td>{{$b->merk_brg}}</td>
              <td>{{$b->kondisi_brg}}</td>
-             <td></td>
+             @foreach($lokasi as $l)
+             <td>{{$l->ket_ruang}}</td>
+             @endforeach
+             <td>{{$b->ket_brg}}</td>
           </tr>
+         
         @endforeach
+       
       </tbody>
    </table>
  </div>

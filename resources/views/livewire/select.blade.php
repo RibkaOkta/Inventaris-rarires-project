@@ -8,14 +8,8 @@
         @endforeach
       </select>
   </div>
-@if(count($kode_alatSection) > 0))
-  <div class="mb-3">
-      <label for="kodenamabarang" class="form-label kode">Jenis Kelompok Alat</label>
-      <!-- <input type="text" class="form-control" id="namabarang" name='kodenamabarang' required> -->
-    
-      <select wire:model="kode_alat" id="namabarang" class="form-select kodebar" name='kodenamabarang' required >
-        
-     </select>
-    </div>
-@endif
+
+  
+
+
 </div>

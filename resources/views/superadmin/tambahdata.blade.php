@@ -12,22 +12,17 @@
   <form action='/tambahdata/tambah' method='POST'>
   @csrf
   <div class="mb-3">
-<<<<<<< HEAD
     <label for="kodebarang" class="form-label">Kode Bidang Barang</label>
-    <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
-=======
-    <label for="kodebarang" class="form-label">Bidang Barang</label><br>
-      <select id="kodebarang"  class="form-select w-75" name='kodebidangbarang' required>
->>>>>>> 24d387f442896257170ebcbe45aca50101bf5d41
-        <option value='1'>Barang Umum</option>
-        <option value='2'>Barang Alat Umum</option>
-        <option value='3'>Barang TU</option>
-        <option value='4'>Barang Ruang Guru</option>
-        <option value='5'>Barang Ruang Perpustakaan</option>
-        <option value='6'>Barang UKS</option>
-        <option value='7'>Barang Koperasi</option>
-        <option value='8'>Barang Ruang Satpam</option>
-      </select>
+      <select id="kodebarang" class="form-select" name='kodebidangbarang' required>
+          <option value='1'>Barang Umum</option>
+          <option value='2'>Barang Alat Umum</option>
+          <option value='3'>Barang TU</option>
+          <option value='4'>Barang Ruang Guru</option>
+          <option value='5'>Barang Ruang Perpustakaan</option>
+          <option value='6'>Barang UKS</option>
+          <option value='7'>Barang Koperasi</option>
+          <option value='8'>Barang Ruang Satpam</option>
+        </select>
   <div class="mb-3">
     <label for="kodelokasi" class="form-label">Lokasi</label>
     <select id="kodelokasi" class="form-select" name='kodelokasi' required>
@@ -37,6 +32,10 @@
     </select>
   </div>
     @livewire('select')
+    <div class="mb-3">
+      <label for="kodenamabarang" class="form-label kode">Kode Barang</label>
+      <input type="text" class="form-control" id="namabarang" name='kodenamabarang' required>
+    </div>
     <div class="mb-3">
     <label for="namabarang" class="form-label nambar">Nama Barang</label>
     <input type="text" class="form-control" id="namabarang" required name='namabarang'>

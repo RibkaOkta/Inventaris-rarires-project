@@ -12,13 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class DatabarangnController extends Controller
 {
-    public function index(){
+    public function index(request $request){
         $kelompokalat = DB::table('klmpk_alat')->get();
         $lokasi = DB::table('lokasi')->get();
-        $barang = DB::table('barang')->orderBy('kode_bidang')->orderby('kode_lokasi')->get();
-
+        $barang = DB::table('barang')->orderBy('kode_bidang')->orderby('kode_lokasi')->
+        get();
         return view('superadmin.databarang', compact('kelompokalat','lokasi','barang'));
-
     }
 
     public function cari(Request $request)
@@ -52,7 +51,9 @@ class DatabarangnController extends Controller
         $sd = $req->input('sumberdana');
         $ket = $req->input('ketbarang');
         $tglnew = date('y', strtotime($tgl));
-
+        $kln = DB::table('lokasi')
+        ->join('barang','barang.kode_lokasi','=','lokasi.kode_lokasi')
+        ->get();
         //mencari urutan barang
         $data = DB::table('barang')->where([
             ['kode_brg', $knb],
@@ -62,11 +63,22 @@ class DatabarangnController extends Controller
         ])->count();
         $data += 1; 
         $nomor = str_pad((string)$data, 3, "0", STR_PAD_LEFT); 
-
         $kode = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $insert = DB::table('barang')->insert(['no' => $kode, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl]);
         return redirect('databarang')->with('success', 'Data Berhasil Tersimpan!');
+    }
+    public function barang(Request $request){
+        $search = $request->input('cari');
+        $data_barang = DB::table('barang')->get();
+        if($search){ 
+         $data_barang =DB::table('barang')->where("nama_brg","LIKE","%$search%")->get();
+         }
+         else{
+         $data_barang = DB::table('barang')->get();
+         }
+        return view('databarang',['barang' => $data_barang]);
+        echo $search;
     }
     public function edit($no)
     {
@@ -77,8 +89,6 @@ class DatabarangnController extends Controller
         list($kdb, $kl, $ktp,  $kkl, $knb, $kub) = explode('.', $no);
       
         $data = DB::table('barang')->join('bidang_brg', 'bidang_brg.kode_bidang_brg', '=', "barang.kode_bidang")->join('klmpk_alat', 'klmpk_alat.kode_klmpk_alat', '=', 'barang.klmpk_alat')->where('no', $no)->get();
-       
-
         return view ('superadmin.databarang',compact('kelompokalat','lokasi','barang','data'));
         ;
     }
@@ -104,7 +114,8 @@ class DatabarangnController extends Controller
         $kodebaru = $kbd.".".$kl.".".$tglnew.".".$kkl.".".$knb.".".$nomor;
 
         $update = DB::table('barang')->where('no', $kodelama)->update(['no' => $kodebaru, 'kode_brg' => $knb, 'nama_brg' => $nb, 'merk_brg' => $merk, "kondisi_brg" => $kb, "sumber_dana" => $sd,"ket_brg"=>$ket,'klmpk_alat'=>$kkl, 'kode_bidang' => $kbd, 'kode_lokasi' => $kl, 'tanggal' => $tgl ]);
-        return redirect('databarang')->with('success', 'Data Berhasil Terupdate!');
+ 
+        return redirect()->route('databarang');
     }
     public function hapus($no)
     {
