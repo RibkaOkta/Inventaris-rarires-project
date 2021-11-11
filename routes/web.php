@@ -110,19 +110,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //admin
-// Route::get('/a/aturan', function () {
-//     return view('admin.aturan');
-// });
-// //dash
-// Route::get('/a/dash', function () {
-//     return view('admin.dash'); });
-// Route::get('/a/dash','AdminController@newa')->name('newaa');
-// Route::get('/a/tambahdata','AdminController@lokasi')->name('newa');
+Route::get('/a/aturan', function () {
+   return view('admin.aturan');
+ });
+ Route::get('/a/dataruangan', function () {
+    return view('admin.dataruangan');
+  });
+ //dash
+Route::get('/a/dash', function () {
+     return view('admin.dash'); });
+ Route::get('/a/dash','AdminController@newa')->name('newaa');
+ Route::get('/a/tambahdata','AdminController@lokasi')->name('newa');
 
-// Route::get('a/databarang',"AdminController@data");
-// Route::get('a/databarang/cari',"AdminController@cari");
-// Route::post('a/tambahdata/tambah', 'AdminController@store');
-// Route::get('a/databarang/{no}/edit','AdminController@edit');
-// Route::post('a/barang/update', 'AdminController@update')->name('update');
-// Route::post('a/databarang/{no}','AdminController@hapus')->name('delete');
-
+ Route::get('a/databarang',"AdminController@data");
+ Route::get('a/databarang/cari',"AdminController@cari");
+ Route::post('a/tambahdata/tambah', 'AdminController@store');
+ Route::get('a/databarang/{no}/edit','AdminController@edit');
+ Route::post('a/barang/update', 'AdminController@update')->name('update');
+ Route::post('a/databarang/{no}','AdminController@hapus')->name('delete');
+ Route::get('a/dataruangan/{kode_lokasi}/edit','AdminController@edit');
+ Route::post('a/lokasi/update', 'AdminController@updateruang')->name('updateruang');
+ Route::get('a/dataruangan/{kode_lokasi}/buka','AdminController@buka')->name('ruang.buka');

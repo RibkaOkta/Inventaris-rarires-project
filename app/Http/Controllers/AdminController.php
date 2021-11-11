@@ -111,5 +111,9 @@ class AdminController extends Controller
         return redirect()->route('databarang');
     }
     
-    
+    public function BarangExport() 
+{
+    return Excel::download(new BarangExport, 'barang.xlsx');
+    }
+
 }

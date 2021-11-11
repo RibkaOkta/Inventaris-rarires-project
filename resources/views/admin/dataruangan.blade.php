@@ -8,7 +8,16 @@
 
 
 <center><p><h1><i class="fas fa-archway me-3"></i>DATA RUANGAN</h1></p>
-
+<div class="card">
+  <div class="card-header">
+    <h2>Total data  </h2>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+    <h5>{{$lokasiw->count()}}</h5>
+    </blockquote>
+  </div>
+</div>
   <link rel="stylesheet" type="text/css" href="style.css">
 <center>
   <table class="table caption-top">
@@ -21,13 +30,13 @@
     </tr>
   </thead>
   <tbody>
-	@foreach($lokasiruang as $lr)
+	@foreach($lokasiw as $lr)
 	<tr>
       <td>{{$lr->kode_lokasi}}</td>
       <td>Gedung {{$lr->gedung}} Lantai {{$lr->lantai}} Ruangan {{$lr->ruangan}}</td>
-      <td>{{$lr->ket_ruang}}</td>
-      <td><a href="{{url('dataruangan/'.$lr->kode_lokasi.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm">Edit</button></a></td>
-      <td><a href="{{url('dataruangan/'.$lr->kode_lokasi.'/buka')}}"> <button type="button" class="btn btn-danger btn-sm">Buka</button></a></td>
+      <td>{{$lr->ket_ruang}}</td> 
+      <td><a href="{{url('dataruangan/'.$lr->kode_lokasi.'/edit')}}"> <button type="button" class="btn btn-warning btn-sm w-25">Edit</button></a>
+      <a href="{{url('dataruangan/'.$lr->kode_lokasi.'/buka')}}"> <button type="button" class="btn btn-danger btn-sm w-25">Buka</button></a></td>
     </tr>
     </tr>
 	@endforeach
@@ -51,7 +60,7 @@
   @csrf
   <div class="mb-3">
       <label for="kodelokasi" class="form-label">Kode Lokasi</label>
-      <input type="text" class="form-control" id="kodelokasi" name='kodelokasi' required value='{{$datalok[0]->kode_lokasi}}'>
+      <input type="number" class="form-control" id="kodelokasi" name='kodelokasi' required value='{{$datalok[0]->kode_lokasi}}'>
     </div>
     <div class="mb-3">
     <label for="gedung" class="form-label">Gedung</label>
@@ -59,11 +68,11 @@
   </div>
   <div class="mb-3">
     <label for="lantai" class="form-label">Lantai</label>
-    <input type="text" class="form-control" id="lantai" name='lantai' required value='{{$datalok[0]->lantai}}'>
+    <input type="number" class="form-control" id="lantai" name='lantai' required value='{{$datalok[0]->lantai}}'>
   </div>
   <div class="mb-3">
     <label for="ruangan" class="form-label">Ruangan</label>
-    <input type="text" class="form-control" id="ruangan" name='ruangan' required value='{{$datalok[0]->ruangan}}'>
+    <input type="number" class="form-control" id="ruangan" name='ruangan' required value='{{$datalok[0]->ruangan}}'>
   </div>
 
   <div class="mb-3">
@@ -81,11 +90,10 @@
 	  </form>
 </div>
    @endisset
-
 @isset($barang)
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" style="width:45rem;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Daftar Barang di Ruangan</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -93,27 +101,35 @@
       <div class="modal-body">
 	 
   @csrf
- <div>
+ <div  class="w-100 mb-3" >
+ <a href="{{route('exportbarang')}}"class="btn btn-success"><i class="fas fa-share-square"></i> Export</a>
    <table class='table table-stripped' style="width:50%">
       <thead>
           <tr>
             <th>No Inventaris</th>
             <th>Nama Barang</th>
             <th>Merk Barang</th>
+            <th>Kondisi Barang</th>
             <th>Lokasi Barang</th>
-            <th>Jumlah Barang</th>
+            <th>Keterangan Barang</th>
           </tr>
       </thead>
       <tbody>
+        
         @foreach($barang as $b)
           <tr>
              <td>{{$b->no}}</td>
              <td>{{$b->nama_brg}}</td>
              <td>{{$b->merk_brg}}</td>
-             <td>{{$b->kode_lokasi}}</td>
-             <td>{{$b->no}}</td>
+             <td>{{$b->kondisi_brg}}</td>
+             @foreach($lokasi as $l)
+             <td>{{$l->ket_ruang}}</td>
+             @endforeach
+             <td>{{$b->ket_brg}}</td>
           </tr>
+         
         @endforeach
+       
       </tbody>
    </table>
  </div>

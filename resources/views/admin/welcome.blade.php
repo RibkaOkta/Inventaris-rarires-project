@@ -10,8 +10,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <link href="{{ asset('asset/style.css') }}" rel="stylesheet">
+           <!-- Styles -->
+           <link href="{{ asset('asset/style.css') }}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
@@ -19,8 +19,7 @@
         <script src="js/app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <script src="sweetalert2.all.min.js"></script>
-        <link rel="stylesheet" href="sweetalert2.min.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script>
@@ -133,46 +132,38 @@
           </a>
           </li>
               <li class="nav-item"> 
-              <a href="/tambahdata" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="a/tambahdata" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-plus me-3"></i>Tambah Data
           </a>
           </li>
               <li class="nav-item">
-              <a href="/aturan" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="a/aturan" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-book me-3"></i>Aturan
           </a>
           </li>
               <li class="nav-item">
-              <a href="databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="a/databarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                    <i class="fas fa-box me-3"></i>Data Barang
           </a>
           </li>
               <li class="nav-item">
-              <a href="/dataruangan" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="a/dataruangan" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                   <i class="fas fa-archway me-3"></i>Data Ruangan
           </a>
           </li>
               <li class="nav-item">
-              <a href="/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <a href="a/pinjambarang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
               <i class="fas fa-newspaper me-3"></i>Pinjam Barang
           </a>
           </li>
-          </li>
-              <li class="nav-item dropdown">
-              <a href="/users" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown"  aria-expanded="false">
-                  <i class="fas fa-users me-3"></i>Users
-          </a>
-               <div class="dropdown-menu">
-               <a class="dropdown-item fs-6" href="/sa">Data User</a>
-              </div>
-           </li>
+
              <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle second-text fw-bold" id="navbar-dropdown" > 
               <i class="fas fa-newspaper me-3"></i>Laporan
              </a>
                <div class="dropdown-menu">
                <a class="dropdown-item fs-6" href="brgrusakberat">Barang Rusak</a>
-               <a href="/laporanpeminjaman" class="dropdown-item fs-6">
+               <a href="a/laporanpeminjaman" class="dropdown-item fs-6">
               Laporan Peminjaman</a>
               </div>
              </li>

@@ -21,17 +21,19 @@ class LoginController extends Controller
     
     // protected $redirectTo = RouteServiceProvider::HOME;
     public function redirectTo(){
-        
+       
         switch(Auth::user()->role){
             case 1:
-                session()->flash('message', 'your message');
-                $this->redirectTo = '/superadmin';
+            session()->flash('message', 'your message');
+                $this->redirectTo = '/superadmin'; 
                 
                 
                 return  $this->redirectTo;
                 break;
             case 2:
+            session()->flash('message1', 'your message');
                 $this->redirectTo = '/admin';
+                
                 return $this->redirectTo;
                 break;
 
@@ -42,6 +44,7 @@ class LoginController extends Controller
             break;
         }
 
+        
         
     }
 
